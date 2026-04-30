@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services — ZENTH LABS</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      :root {
+        --card: rgba(255, 255, 255, 0.02);
+        --border: rgba(255, 255, 255, 0.06);
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .reveal {
+        animation: fadeIn 0.8s ease forwards;
+      }
+
+      .glow-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+          circle at 50% -10%,
+          rgba(0, 121, 107, 0.15),
+          transparent 60%
+        );
+        z-index: -1;
+      }
+
+      .hero {
+        padding: 180px 8% 80px;
+        text-align: center;
+      }
+
+      .badge {
+        background: rgba(77, 182, 172, 0.05);
+        border: 1px solid rgba(77, 182, 172, 0.2);
+        color: var(--aqua);
+        padding: 8px 20px;
+        border-radius: 100px;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 25px;
+        display: inline-block;
+      }
+
+      .hero h1 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(2.8rem, 9vw, 5rem);
+        font-weight: 900;
+        margin-bottom: 20px;
+        letter-spacing: -3px;
+        line-height: 1;
+      }
+
+      .services-grid {
+        padding: 40px 8%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 25px;
+      }
+
+      .bento-card {
+        background: var(--card);
+        border-radius: 35px;
+        padding: 40px;
+        border: 1px solid var(--border);
+        transition: 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        backdrop-filter: blur(10px);
+      }
+
+      .bento-card:hover {
+        border-color: var(--aqua);
+        background: rgba(77, 182, 172, 0.03);
+        transform: translateY(-12px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      }
+
+      .card-top i {
+        font-size: 2.5rem;
+        color: var(--aqua);
+        margin-bottom: 25px;
+        display: block;
+        filter: drop-shadow(0 0 10px rgba(77, 182, 172, 0.3));
+      }
+
+      .card-top h3 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 1.6rem;
+        font-weight: 800;
+        margin-bottom: 12px;
+      }
+
+      .card-top p {
+        color: var(--dim);
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 30px;
+      }
+
+      .btn-service {
+        width: 100%;
+        padding: 16px;
+        border-radius: 18px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.03);
+        color: #fff;
+        font-weight: 700;
+        cursor: pointer;
+        transition: 0.3s;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+        text-decoration: none;
+        display: block;
+        text-align: center;
+      }
+
+      .bento-card:hover .btn-service {
+        background: var(--teal);
+        border-color: transparent;
+      }
+
+      .process-section {
+        padding: 100px 8%;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.01);
+      }
+
+      .process-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 40px;
+        margin-top: 60px;
+      }
+
+      .step {
+        position: relative;
+      }
+
+      .step-num {
+        font-size: 4rem;
+        font-weight: 900;
+        font-family: "Space Grotesk";
+        opacity: 0.05;
+        position: absolute;
+        top: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .step h4 {
+        font-family: "Space Grotesk";
+        font-size: 1.2rem;
+        color: var(--aqua);
+        margin-bottom: 10px;
+        position: relative;
+      }
+
+      .step p {
+        color: var(--dim);
+        font-size: 0.9rem;
+      }
+
+      .stats-bar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 60px 8%;
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+        background: var(--bg);
+      }
+
+      .stat-item {
+        text-align: center;
+        padding: 20px;
+      }
+
+      .stat-item h2 {
+        font-size: 2.5rem;
+        font-family: "Space Grotesk";
+        color: #fff;
+      }
+
+      .stat-item p {
+        color: var(--aqua);
+        font-size: 11px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      .faq-section {
+        padding: 100px 8% 60px;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .faq-item {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 25px;
+        margin-bottom: 15px;
+        cursor: pointer;
+      }
+
+      .faq-item h4 {
+        font-family: "Space Grotesk";
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .faq-item p {
+        color: var(--dim);
+        font-size: 0.9rem;
+        margin-top: 15px;
+        display: none;
+        line-height: 1.6;
+      }
+
+      .cta-box {
+        margin: 60px 8% 100px;
+        padding: 100px 40px;
+        text-align: center;
+        background: radial-gradient(
+          circle at top right,
+          rgba(0, 121, 107, 0.1),
+          transparent
+        );
+        border: 1px solid var(--border);
+        border-radius: 50px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      footer {
+        text-align: center;
+        padding: 60px 0;
+        border-top: 1px solid var(--border);
+        color: var(--dim);
+        font-size: 10px;
+        letter-spacing: 3px;
+        font-weight: 600;
+      }
+
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 3rem;
+        }
+
+        .services-grid {
+          padding: 20px 5%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="glow-bg"></div>
+    <nav>
+      <div class="logo"><a href="index.html">ZENTH LABS</a></div>
+      <div class="nav">
+        <a href="index.html#apps"
+          ><i class="fa-solid fa-layer-group"></i> Apps</a
+        >
+        <a href="index.html#services"
+          ><i class="fa-solid fa-screwdriver-wrench"></i> Services</a
+        >
+      </div>
+    </nav>
+
+    <header class="hero">
+      <span class="badge reveal">Premium Solutions</span>
+      <h1 class="reveal">
+        Elevate Your <br /><span style="color: var(--aqua)"
+          >Digital Vision.</span
+        >
+      </h1>
+      <p class="reveal">
+        We blend high-end design with precision engineering to deliver software
+        that doesn't just work, but inspires.
+      </p>
+    </header>
+
+    <div class="stats-bar">
+      <div class="stat-item">
+        <h2>99%</h2>
+        <p>Uptime Rate</p>
+      </div>
+      <div class="stat-item">
+        <h2>24/7</h2>
+        <p>Tech Support</p>
+      </div>
+      <div class="stat-item">
+        <h2>Local</h2>
+        <p>Offline First</p>
+      </div>
+      <div class="stat-item">
+        <h2>Pro</h2>
+        <p>UI Aesthetics</p>
+      </div>
+    </div>
+
+    <section class="services-grid">
+      <div class="bento-card" id="app-dev">
+        <div class="card-top">
+          <i class="fa-solid fa-mobile-screen-button"></i>
+          <h3>App Development</h3>
+          <p>
+            Native Android applications focused on performance, security, and
+            material design excellence.
+          </p>
+        </div>
+        <a href="contact/contact.html" class="btn-service">Initiate Build</a>
+      </div>
+
+      <div class="bento-card" id="web-solutions">
+        <div class="card-top">
+          <i class="fa-solid fa-code"></i>
+          <h3>Web Engineering</h3>
+          <p>
+            Next-gen responsive websites built with clean code and
+            lightning-fast loading speeds.
+          </p>
+        </div>
+        <a href="contact/contact.html" class="btn-service">Deploy Site</a>
+      </div>
+
+      <div class="bento-card" id="ui-ux">
+        <div class="card-top">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          <h3>UI/UX Architecture</h3>
+          <p>
+            Refining user journeys through modern teal-themed aesthetics and
+            intuitive interfaces.
+          </p>
+        </div>
+        <a href="contact/contact.html" class="btn-service">Start Design</a>
+      </div>
+
+      <div class="bento-card">
+        <div class="card-top">
+          <i class="fa-solid fa-pen-nib"></i>
+          <h3>Visual Identity</h3>
+          <p>
+            Professional logo crafting, SVG vector designs, and premium digital
+            book covers.
+          </p>
+        </div>
+        <a href="contact/contact.html" class="btn-service">Get Assets</a>
+      </div>
+
+      <div class="bento-card" id="pc-repair">
+        <div class="card-top">
+          <i class="fa-solid fa-laptop-medical"></i>
+          <h3>System Optimization</h3>
+          <p>
+            Windows system recovery, driver injection, and hardware performance
+            tuning.
+          </p>
+        </div>
+        <a href="contact/contact.html" class="btn-service">Repair Now</a>
+      </div>
+
+      <div class="bento-card" id="advertisement">
+        <div class="card-top">
+          <i class="fa-solid fa-bullhorn"></i>
+          <h3>Ad Partnerships</h3>
+          <p>
+            Strategic ad placement within Zenth Apps to reach a high-quality
+            tech audience.
+          </p>
+        </div>
+        <a href="contact/contact.html" class="btn-service">Partner Up</a>
+      </div>
+    </section>
+
+    <section class="process-section">
+      <span class="badge">Workflow</span>
+      <h2
+        style="
+          font-family: &quot;Space Grotesk&quot;;
+          font-size: 2.5rem;
+          margin-bottom: 10px;
+        "
+      >
+        How We Work
+      </h2>
+      <div class="process-grid">
+        <div class="step">
+          <div class="step-num">01</div>
+          <h4>Discovery</h4>
+          <p>Understanding your goals and requirements.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <h4>Design</h4>
+          <p>Crafting the visual teal-themed blueprint.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <h4>Development</h4>
+          <p>Writing clean, localized, and fast code.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <h4>Launch</h4>
+          <p>Final testing and system deployment.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <h2
+        style="
+          font-family: &quot;Space Grotesk&quot;;
+          margin-bottom: 40px;
+          text-align: center;
+        "
+      >
+        Frequently Asked Questions
+      </h2>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <h4>
+          How long does a typical project take? <i class="fa-solid fa-plus"></i>
+        </h4>
+        <p>
+          Usually, a standard landing page takes 5-7 days, while native apps can
+          take 2-4 weeks depending on the complexity.
+        </p>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <h4>
+          Do you provide custom maintenance? <i class="fa-solid fa-plus"></i>
+        </h4>
+        <p>
+          Yes, we offer ongoing support and optimization services for all our
+          builds and PC repairs.
+        </p>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <h4>Are the apps fully offline? <i class="fa-solid fa-plus"></i></h4>
+        <p>
+          Most of our utility apps follow a 'local-first' policy, meaning they
+          work perfectly without an active internet connection.
+        </p>
+      </div>
+    </section>
+
+    <section class="cta-box reveal">
+      <h2 style="font-family: &quot;Space Grotesk&quot;">
+        Ready to build something iconic?
+      </h2>
+      <p style="margin-top: 10px">
+        Drop a message and let's discuss your next project.
+      </p>
+      <a
+        href="contact/contact.html"
+        class="btn-service"
+        style="max-width: 320px; background: var(--teal); margin: 40px auto 0"
+      >
+        Get Started Now
+      </a>
+    </section>
+
+    <footer>
+      <div class="copyright">
+        <p>© 2026 <span class="cr-brand">ZENTH LABS</span></p>
+        <span id="app-version"></span>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+      function toggleFaq(element) {
+        const p = element.querySelector("p");
+        const icon = element.querySelector("i");
+        if (p.style.display === "block") {
+          p.style.display = "none";
+          icon.classList.replace("fa-minus", "fa-plus");
+        } else {
+          p.style.display = "block";
+          icon.classList.replace("fa-plus", "fa-minus");
+        }
+      }
+    </script>
+  </body>
+</html>

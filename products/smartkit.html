@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmartKit — ZENITH LABS</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="apps.css" />
+
+    <style>
+      /* --- PAGE SPECIFIC OVERRIDES --- */
+      .premium-tag {
+        background: #ffd700;
+        color: #000;
+        padding: 2px 10px;
+        border-radius: 4px;
+        font-size: 10px;
+        font-weight: 900;
+        vertical-align: middle;
+        margin-left: 8px;
+        text-transform: uppercase;
+      }
+
+      .btn-main {
+        background: var(--teal);
+        color: white;
+        padding: 14px 28px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.95rem;
+        transition: 0.3s;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        box-shadow: 0 10px 20px rgba(0, 121, 107, 0.2);
+      }
+
+      .btn-main:hover {
+        transform: translateY(-3px);
+        background: var(--aqua);
+        box-shadow: 0 15px 25px rgba(0, 121, 107, 0.4);
+      }
+
+      .btn-beta {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--aqua);
+        color: var(--aqua);
+        padding: 14px 28px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.95rem;
+        transition: 0.3s;
+      }
+
+      .premium-report {
+        background: linear-gradient(
+          135deg,
+          rgba(0, 121, 107, 0.15),
+          transparent
+        );
+        border: 1px solid rgba(0, 121, 107, 0.3);
+        padding: 30px 45px;
+        border-radius: 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .report-btn {
+        background: var(--teal);
+        color: white;
+        padding: 12px 28px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: 0.3s;
+      }
+
+      .report-btn:hover {
+        background: var(--aqua);
+        transform: scale(1.05);
+      }
+
+      .info-item p {
+        color: var(--aqua) !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div class="logo"><a href="../index.html">ZENTH LABS</a></div>
+      <div class="nav">
+        <a href="../index.html#apps"
+          ><i class="fa-solid fa-layer-group"></i> Apps</a
+        >
+        <a href="../index.html#services"
+          ><i class="fa-solid fa-screwdriver-wrench"></i> Services</a
+        >
+      </div>
+    </nav>
+
+    <section class="app-hero">
+      <div class="app-icon-frame">
+        <img src="app-icon.png" alt="SmartKit Icon" />
+      </div>
+      <div class="app-title">
+        <h1>SmartKit<span class="premium-tag">Premium UI</span></h1>
+        <p
+          style="
+            color: var(--dim);
+            margin-top: 10px;
+            max-width: 550px;
+            font-size: 15px;
+          "
+        >
+          The ultimate all-in-one productivity hub. Engineered for speed and
+          precision, SmartKit provides high-utility tools for Android without
+          the clutter.
+        </p>
+
+        <div class="action-btns">
+          <a href="/apps/smartkit-stable.apk" class="btn-main" download
+            ><i class="fa-brands fa-google-play"></i> Download Stable v2.4</a
+          >
+          <a href="beta.html" class="btn-beta"
+            ><i class="fa-solid fa-flask"></i> Join Beta Program</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <div class="info-bar">
+      <div class="info-item">
+        <h4>Current Version</h4>
+        <p>v2.4.0 (Stable)</p>
+      </div>
+      <div class="info-item">
+        <h4>Last Updated</h4>
+        <p>Apr 28, 2026</p>
+      </div>
+      <div class="info-item">
+        <h4>App Size</h4>
+        <p>12.4 MB</p>
+      </div>
+      <div class="info-item">
+        <h4>Ads Policy</h4>
+        <p>100% Ad-Free</p>
+      </div>
+    </div>
+
+    <div
+      class="gallery-header"
+      style="display: flex; justify-content: space-between; padding: 20px 8% 0"
+    >
+      <h2 style="color: #fff; font-size: 1.4rem; font-weight: 800">
+        App Gallery
+      </h2>
+      <div class="scroll-indicator" style="color: var(--aqua)">
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </div>
+    </div>
+
+    <div class="ss-container">
+      <div class="ss-box"></div>
+      <div class="ss-box"></div>
+      <div class="ss-box"></div>
+      <div class="ss-box"></div>
+      <div class="ss-box"></div>
+      <div class="ss-box"></div>
+      <div class="ss-box"></div>
+    </div>
+
+    <section class="content-section fade" style="padding: 40px 8%">
+      <h2
+        style="
+          margin-bottom: 35px;
+          border-left: 5px solid var(--teal);
+          padding-left: 15px;
+          color: #fff;
+        "
+      >
+        Core App Features
+      </h2>
+      <div
+        class="highlight-grid"
+        style="
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+          gap: 25px;
+        "
+      >
+        <div class="premium-card">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          <h3>Versatile Tool Suite</h3>
+          <p style="font-size: 14px; color: var(--dim); line-height: 1.6">
+            From advanced BMI trackers and password generators to high-precision
+            unit converters and financial calculators—access everything in a
+            single interface.
+          </p>
+        </div>
+        <div class="premium-card">
+          <i class="fa-solid fa-gauge-high"></i>
+          <h3>Lightning Performance</h3>
+          <p style="font-size: 14px; color: var(--dim); line-height: 1.6">
+            Optimized for efficiency. SmartKit features instant load times and
+            is designed to consume minimal RAM and battery life during
+            operation.
+          </p>
+        </div>
+        <div class="premium-card">
+          <i class="fa-solid fa-user-shield"></i>
+          <h3>Private & Secure</h3>
+          <p style="font-size: 14px; color: var(--dim); line-height: 1.6">
+            Your privacy is non-negotiable. All data and calculations are
+            processed locally on your device. We never use cloud storage or
+            track your personal habits.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-title">Other apps from The Lab</div>
+    <div class="lab-scroll fade">
+      <a href="pdfmaster.html" class="lab-card">
+        <h3>
+          <span><i class="fa-solid fa-file-pdf"></i> PDF Master</span>
+          <i class="fa-solid fa-chevron-right arrow-icon"></i>
+        </h3>
+        <p>
+          The ultimate PDF toolkit to merge, split, and compress documents
+          instantly.
+        </p>
+      </a>
+      <a href="criptix.html" class="lab-card">
+        <h3>
+          <span><i class="fa-solid fa-user-shield"></i> Criptix</span>
+          <i class="fa-solid fa-chevron-right arrow-icon"></i>
+        </h3>
+        <p>
+          Military-grade AES-256 text encryption to secure your private digital
+          communications.
+        </p>
+      </a>
+      <a href="compressor.html" class="lab-card">
+        <h3>
+          <span><i class="fa-solid fa-file-image"></i> Compressor</span>
+          <i class="fa-solid fa-chevron-right arrow-icon"></i>
+        </h3>
+        <p>
+          Save storage space by compressing large images without losing visual
+          clarity.
+        </p>
+      </a>
+      <a href="interest-calc.html" class="lab-card">
+        <h3>
+          <span><i class="fa-solid fa-calculator"></i> Interest Calc</span>
+          <i class="fa-solid fa-chevron-right arrow-icon"></i>
+        </h3>
+        <p>
+          Calculate simple and compound interest for loans with detailed
+          summaries.
+        </p>
+      </a>
+      <a href="date-calc.html" class="lab-card">
+        <h3>
+          <span><i class="fa-solid fa-calendar-days"></i> Date Calc</span>
+          <i class="fa-solid fa-chevron-right arrow-icon"></i>
+        </h3>
+        <p>
+          Precision age tracking and countdowns for your important upcoming
+          events.
+        </p>
+      </a>
+      <a href="notes.html" class="lab-card">
+        <h3>
+          <span><i class="fa-solid fa-note-sticky"></i> Smart Notes</span>
+          <i class="fa-solid fa-chevron-right arrow-icon"></i>
+        </h3>
+        <p>
+          A minimalist, secure note-taking experience with localized encryption.
+        </p>
+      </a>
+    </div>
+
+    <section class="report-section fade" style="padding: 30px 8%">
+      <div class="premium-report">
+        <div class="report-content">
+          <h3 style="color: #fff">Shape the Future of SmartKit</h3>
+          <p style="color: var(--dim); font-size: 14px">
+            Have a feature request or found a bug? We would love to hear your
+            feedback.
+          </p>
+        </div>
+        <a href="collaborate.html" class="report-btn">Suggest Feature</a>
+      </div>
+    </section>
+
+    <footer id="contact">
+      <div class="footer-grid footer">
+        <div>
+          <div class="footer-logo">ZENTH LABS</div>
+          <p style="font-size: 13px; line-height: 1.6">
+            Precision utility software and digital solutions built for the
+            future.
+          </p>
+        </div>
+
+        <div>
+          <h4>Platform</h4>
+          <a href="../index.html#apps">Applications</a>
+          <a href="../index.html#services">Services</a>
+          <a href="../log/updates.html">Update Log</a>
+        </div>
+
+        <div>
+          <h4>Company</h4>
+          <a href="../contact/contact.html">Contact Us</a>
+          <a href="../contact/team.html">Credit & Team</a>
+        </div>
+
+        <div>
+          <h4>Legal</h4>
+          <a href="../legal/privacy.html">Privacy Policy</a>
+          <a href="../legal/terms.html">Terms</a>
+        </div>
+
+        <div>
+          <h4>Support</h4>
+          <a href="../contact/contact.html">Report Bug</a>
+          <button
+            class="feedback-btn"
+            onclick="window.location.href = '../contact/feedback.html'"
+            style="margin-top: 15px"
+          >
+            GIVE FEEDBACK
+          </button>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p>© 2026 <span class="cr-brand">ZENTH LABS</span></p>
+        <span id="app-version"></span>
+      </div>
+    </footer>
+    <script src="../script.js"></script>
+    <script>
+      const faders = document.querySelectorAll(".fade");
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("show");
+          });
+        },
+        { threshold: 0.1 },
+      );
+      faders.forEach((el) => obs.observe(el));
+    </script>
+  </body>
+</html>

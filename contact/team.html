@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Team — Zenth Labs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+        :root {
+            --bg: #05080a;
+            --teal: #00796b;
+            --aqua: #4db6ac;
+            --white: #ffffff;
+            --dim: #94a3b8;
+            --glass: rgba(255, 255, 255, 0.03);
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--white);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+        }
+
+        .team-hero {
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: radial-gradient(circle at center, rgba(0, 121, 107, 0.15), transparent 70%);
+            padding: 0 5%;
+        }
+
+        .team-hero h1 {
+            font-size: clamp(35px, 6vw, 65px);
+            font-weight: 800;
+            background: linear-gradient(90deg, #fff, var(--aqua), #fff);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        .team-hero p {
+            color: var(--dim);
+            max-width: 600px;
+            font-size: 1.1rem;
+        }
+
+        /* --- TEAM GRID --- */
+        .team-section {
+            padding: 60px 8% 120px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .team-card {
+            background: var(--glass);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 30px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--aqua);
+            background: rgba(77, 182, 172, 0.05);
+        }
+
+        .member-avatar {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg, var(--teal), var(--aqua));
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: #fff;
+            box-shadow: 0 10px 20px rgba(0, 121, 107, 0.2);
+        }
+
+        .team-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+            color: var(--white);
+        }
+
+        .member-role {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--aqua);
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .member-bio {
+            font-size: 14px;
+            color: var(--dim);
+            line-height: 1.6;
+        }
+
+        .social-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: var(--dim);
+            font-size: 1.1rem;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--white);
+        }
+
+        /* --- QUOTE SECTION --- */
+        .quote-box {
+            text-align: center;
+            padding: 80px 10%;
+            background: rgba(255, 255, 255, 0.01);
+            border-radius: 50px;
+            margin: 0 8% 100px;
+            border: 1px dashed rgba(255, 255, 255, 0.05);
+        }
+
+        .quote-box i {
+            font-size: 2rem;
+            color: var(--teal);
+            margin-bottom: 20px;
+        }
+
+        .quote-box p {
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--white);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="aura"></div>
+    <nav>
+        <div class="logo"><a href="../index.html">ZENTH LABS</a></div>
+        <div class="nav">
+            <a href="../index.html#apps"><i class="fa-solid fa-layer-group"></i> Apps</a>
+            <a href="../index.html#services"><i class="fa-solid fa-screwdriver-wrench"></i> Services</a>
+        </div>
+    </nav>
+
+    <header class="team-hero">
+        <h1>The Minds Behind</h1>
+        <p>A collective of developers and designers dedicated to building high-performance, local-first utility
+            software.</p>
+    </header>
+
+    <section class="team-section">
+        <div class="team-grid">
+
+            <div class="team-card">
+                <div class="member-avatar">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+                <span class="member-role">Lead Developer</span>
+                <h3>Member Alpha</h3>
+                <p class="member-bio">Specializing in native Android architecture and secure encryption protocols.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <div class="member-avatar">
+                    <i class="fa-solid fa-palette"></i>
+                </div>
+                <span class="member-role">UI/UX Designer</span>
+                <h3>Member Beta</h3>
+                <p class="member-bio">Crafting modern, premium aesthetics with a focus on user-centric layouts.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-dribbble"></i></a>
+                    <a href="#"><i class="fa-brands fa-behance"></i></a>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <div class="member-avatar">
+                    <i class="fa-solid fa-microchip"></i>
+                </div>
+                <span class="member-role">System Architect</span>
+                <h3>Member Gamma</h3>
+                <p class="member-bio">Expert in Windows optimization, hardware diagnostics, and driver integration.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                    <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="quote-box">
+        <i class="fa-solid fa-quote-left"></i>
+        <p>Innovation is not about adding more features; it's about making the essential tools so perfect that they feel
+            invisible.</p>
+    </div>
+
+    <footer id="contact">
+        <div class="footer-grid footer">
+            <div>
+                <div class="footer-logo">ZENTH LABS</div>
+                <p style="font-size: 13px; line-height: 1.6">
+                    Precision utility software and digital solutions built for the
+                    future.
+                </p>
+            </div>
+
+            <div>
+                <h4>Platform</h4>
+                <a href="../index.html#apps">Applications</a>
+                <a href="../index.html#services">Services</a>
+                <a href="../log/updates.html">Update Log</a>
+            </div>
+
+            <div>
+                <h4>Company</h4>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+
+            <div>
+                <h4>Legal</h4>
+                <a href="../legal/privacy.html">Privacy Policy</a>
+                <a href="../legal/terms.html">Terms</a>
+            </div>
+
+            <div>
+                <h4>Support</h4>
+                <a href="contact.html">Report Bug</a>
+                <button class="feedback-btn" onclick="window.location.href = 'feedback.html'" style="margin-top: 15px">
+                    GIVE FEEDBACK
+                </button>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>
+                © 2026 <span class="cr-brand">ZENTH LABS</span> — ALL RIGHTS RESERVED
+            </p>
+            <span id="app-version"></span>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

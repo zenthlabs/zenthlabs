@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upcoming Projects — ZENITH LABS</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/apps.css" />
+
+    <style>
+      /* --- PAGE SPECIFIC OVERRIDES --- */
+      .upcoming-hero {
+        min-height: 70vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 120px 8% 60px;
+        text-align: center;
+      }
+
+      .empty-icon {
+        font-size: 5rem;
+        color: var(--dim);
+        margin-bottom: 30px;
+        opacity: 0.3;
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          opacity: 0.3;
+        }
+
+        50% {
+          transform: scale(1.05);
+          opacity: 0.5;
+        }
+
+        100% {
+          transform: scale(1);
+          opacity: 0.3;
+        }
+      }
+
+      .upcoming-hero h1 {
+        font-size: 2.5rem;
+        font-weight: 900;
+        margin-bottom: 15px;
+        color: #fff;
+      }
+
+      .upcoming-hero p {
+        color: var(--dim);
+        max-width: 600px;
+        margin-bottom: 35px;
+        font-size: 15px;
+      }
+
+      .changelog-link {
+        background: var(--teal);
+        color: white;
+        padding: 16px 32px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        transition: 0.3s;
+        box-shadow: 0 10px 20px rgba(0, 121, 107, 0.2);
+      }
+
+      .changelog-link:hover {
+        background: var(--aqua);
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px rgba(0, 121, 107, 0.3);
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div class="logo"><a href="../index.html">ZENTH LABS</a></div>
+      <div class="nav">
+        <a href="../index.html#apps"
+          ><i class="fa-solid fa-layer-group"></i> Apps</a
+        >
+        <a href="../index.html#services"
+          ><i class="fa-solid fa-screwdriver-wrench"></i> Services</a
+        >
+      </div>
+    </nav>
+
+    <section class="upcoming-hero">
+      <div class="empty-icon">
+        <i class="fa-solid fa-box-open"></i>
+      </div>
+      <div class="fade show">
+        <h1>No Active Projects Found</h1>
+        <p>
+          Our developers are currently deep in the production phase for our next
+          generation of tools. We are focusing on high-performance architecture
+          and security to ensure a premium experience.
+        </p>
+        <div style="display: flex; justify-content: center">
+          <a href="../log/updates.html" class="changelog-link">
+            <i class="fa-solid fa-clock-rotate-left"></i> View Recent Updates
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer id="contact">
+      <div class="footer-grid footer">
+        <div>
+          <div class="footer-logo">ZENTH LABS</div>
+          <p style="font-size: 13px; line-height: 1.6">
+            Precision utility software and digital solutions built for the
+            future.
+          </p>
+        </div>
+
+        <div>
+          <h4>Platform</h4>
+          <a href="../index.html#apps">Applications</a>
+          <a href="../index.html#services">Services</a>
+          <a href="../log/updates.html">Update Log</a>
+        </div>
+
+        <div>
+          <h4>Company</h4>
+          <a href="../contact/about.html">About Us</a>
+          <a href="../contact/contact.html">Contact Us</a>
+          <a href="../contact/team.html">Credit & Team</a>
+        </div>
+
+        <div>
+          <h4>Legal</h4>
+          <a href="../legal/privacy.html">Privacy Policy</a>
+          <a href="../legal/terms.html">Terms</a>
+        </div>
+
+        <div>
+          <h4>Support</h4>
+          <a href="../contact/contact.html">Report Bug</a>
+          <button
+            class="feedback-btn"
+            onclick="window.location.href = '../contact/feedback.html'"
+            style="margin-top: 15px"
+          >
+            GIVE FEEDBACK
+          </button>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p>© 2026 <span class="cr-brand">ZENTH LABS</span></p>
+        <span id="app-version"></span>
+      </div>
+    </footer>
+
+    <script src="/script.js"></script>
+    <script>
+      const faders = document.querySelectorAll(".fade");
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("show");
+          });
+        },
+        { threshold: 0.1 },
+      );
+      faders.forEach((el) => obs.observe(el));
+    </script>
+  </body>
+</html>

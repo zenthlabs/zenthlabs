@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us — ZENTH LABS</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="../style.css" />
+
+    <style>
+      /* PAGE SPECIFIC MODERN BODY DESIGN */
+      .container {
+        padding: 120px 8% 80px;
+      }
+
+      .modern-hero {
+        text-align: center;
+        margin-bottom: 80px;
+      }
+
+      .modern-hero h1 {
+        font-size: clamp(2.5rem, 8vw, 5rem);
+        font-weight: 900;
+        letter-spacing: -2px;
+        margin-bottom: 20px;
+        line-height: 1;
+      }
+
+      .gradient-text {
+        background: linear-gradient(135deg, #fff 30%, var(--aqua));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* BENTO GRID LAYOUT */
+      .bento-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        gap: 20px;
+      }
+
+      .bento-item {
+        background: var(--card);
+        border-radius: 30px;
+        padding: 40px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .bento-item:hover {
+        border-color: var(--aqua);
+        transform: scale(1.02);
+        background: rgba(255, 255, 255, 0.06);
+      }
+
+      .large {
+        grid-column: span 2;
+        grid-row: span 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .tall {
+        grid-row: span 2;
+      }
+
+      .wide {
+        grid-column: span 2;
+      }
+
+      .bento-item i {
+        font-size: 2.5rem;
+        color: var(--aqua);
+        margin-bottom: 20px;
+        display: block;
+      }
+
+      .bento-item h3 {
+        font-size: 1.6rem;
+        font-weight: 800;
+        margin-bottom: 15px;
+        color: #fff;
+      }
+
+      .bento-item p {
+        color: var(--dim);
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      .status-tag {
+        display: inline-block;
+        padding: 6px 16px;
+        border-radius: 100px;
+        background: rgba(0, 121, 107, 0.1);
+        border: 1px solid var(--teal);
+        color: var(--aqua);
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        letter-spacing: 1px;
+      }
+
+      @media (max-width: 1024px) {
+        .bento-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 600px) {
+        .bento-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .large,
+        .wide,
+        .tall {
+          grid-column: span 1;
+          grid-row: span 1;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div class="logo"><a href="../index.html">ZENTH LABS</a></div>
+      <div class="nav">
+        <a href="../index.html#apps"
+          ><i class="fa-solid fa-layer-group"></i> Apps</a
+        >
+        <a href="../index.html#services"
+          ><i class="fa-solid fa-screwdriver-wrench"></i> Services</a
+        >
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="modern-hero fade">
+        <span class="status-tag">Established 2024</span>
+        <h1>We Build <span class="gradient-text">Precision.</span></h1>
+        <p>
+          Zenth Labs is an independent engineering studio crafting digital
+          experiences that are fast, secure, and entirely focused on the user.
+        </p>
+      </div>
+
+      <div class="bento-grid">
+        <div class="bento-item large fade">
+          <i class="fa-solid fa-code"></i>
+          <h3>The Philosophy</h3>
+          <p>
+            Our goal is simple: To eliminate digital noise. We create apps that
+            launch in milliseconds, respect your storage, and never track your
+            movements. Pure software, zero bloat.
+          </p>
+        </div>
+
+        <div class="bento-item tall fade">
+          <i class="fa-solid fa-user-shield"></i>
+          <h3>Privacy First</h3>
+          <p>
+            No cookies. No tracking. No third-party data selling. Most of our
+            tools work completely offline to ensure your data never leaves your
+            device.
+          </p>
+        </div>
+
+        <div class="bento-item fade">
+          <i
+            class="fa-solid fa-rectangle-ad"
+            style="text-decoration: line-through; opacity: 0.5"
+          ></i>
+          <h3>100% Ad-Free</h3>
+          <p>
+            We don't believe in monetizing through annoyance. Our tools are
+            built for productivity, not advertising.
+          </p>
+        </div>
+
+        <div class="bento-item fade">
+          <i class="fa-solid fa-bolt"></i>
+          <h3>High Speed</h3>
+          <p>
+            Optimized for modern mobile and web environments for instant
+            execution.
+          </p>
+        </div>
+
+        <div class="bento-item wide fade">
+          <div style="display: flex; align-items: center; gap: 20px">
+            <i class="fa-solid fa-rocket" style="margin: 0"></i>
+            <div>
+              <h3>The Journey</h3>
+              <p>
+                From Shree Ram Farmhouse in 2024 to SmartKit in 2026, we have
+                consistently pushed the boundaries of functional minimalism.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bento-item fade">
+          <i class="fa-solid fa-heart"></i>
+          <h3>Built with Passion</h3>
+          <p>
+            Every tool is designed with care to be a masterpiece of utility.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <footer id="contact">
+      <div class="footer-grid footer">
+        <div>
+          <div class="footer-logo">ZENTH LABS</div>
+          <p style="font-size: 13px; line-height: 1.6">
+            Precision utility software and digital solutions built for the
+            future.
+          </p>
+        </div>
+
+        <div>
+          <h4>Platform</h4>
+          <a href="../index.html#apps">Applications</a>
+          <a href="../index.html#services">Services</a>
+          <a href="../log/updates.html">Update Log</a>
+        </div>
+
+        <div>
+          <h4>Company</h4>
+          <a href="contact.html">Contact Us</a>
+          <a href="team.html">Credit & Team</a>
+        </div>
+
+        <div>
+          <h4>Legal</h4>
+          <a href="../legal/privacy.html">Privacy Policy</a>
+          <a href="../legal/terms.html">Terms</a>
+        </div>
+
+        <div>
+          <h4>Support</h4>
+          <a href="contact.html">Report Bug</a>
+          <button
+            class="feedback-btn"
+            onclick="window.location.href = 'feedback.html'"
+            style="margin-top: 15px"
+          >
+            GIVE FEEDBACK
+          </button>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p>© 2026 <span class="cr-brand">ZENTH LABS</span></p>
+        <span id="app-version"></span>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>

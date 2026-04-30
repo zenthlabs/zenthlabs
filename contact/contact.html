@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact & Support — ZENTH LABS</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+      :root {
+        --surface: #0d1117;
+        --glass: rgba(255, 255, 255, 0.02);
+        --border: rgba(255, 255, 255, 0.06);
+      }
+
+      .wrapper {
+        padding: 140px 8% 100px;
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: 60px;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      /* --- LEFT SIDE: INFO --- */
+      .info-side {
+        position: sticky;
+        top: 120px;
+        height: fit-content;
+      }
+
+      .info-side h1 {
+        font-family: "Space Grotesk";
+        font-size: 3.5rem;
+        line-height: 1;
+        margin-bottom: 25px;
+        font-weight: 900;
+      }
+
+      .info-side p {
+        color: var(--dim);
+        line-height: 1.6;
+        margin-bottom: 40px;
+        font-size: 1.1rem;
+      }
+
+      .contact-card {
+        background: var(--glass);
+        border: 1px solid var(--border);
+        padding: 25px;
+        border-radius: 24px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        transition: 0.3s;
+      }
+
+      .contact-card:hover {
+        border-color: var(--aqua);
+        background: rgba(255, 255, 255, 0.05);
+        transform: translateX(10px);
+      }
+
+      .contact-card i {
+        font-size: 1.5rem;
+        color: var(--aqua);
+        background: rgba(77, 182, 172, 0.1);
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 14px;
+      }
+
+      .contact-card div h4 {
+        font-size: 0.9rem;
+        color: var(--dim);
+        font-weight: 400;
+      }
+
+      .contact-card div p {
+        margin: 0;
+        color: #fff;
+        font-weight: 600;
+        font-size: 1rem;
+      }
+
+      .status-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(0, 255, 136, 0.05);
+        color: #00ff88;
+        padding: 6px 14px;
+        border-radius: 100px;
+        font-size: 12px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        border: 1px solid rgba(0, 255, 136, 0.2);
+      }
+
+      .dot {
+        width: 8px;
+        height: 8px;
+        background: #00ff88;
+        border-radius: 50%;
+        box-shadow: 0 0 10px #00ff88;
+        animation: pulse 1.5s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          opacity: 1;
+        }
+
+        50% {
+          opacity: 0.3;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+
+      /* --- RIGHT SIDE: FORM --- */
+      .glass-card {
+        background: var(--glass);
+        border: 1px solid var(--border);
+        border-radius: 40px;
+        padding: 50px;
+        backdrop-filter: blur(20px);
+        position: relative;
+      }
+
+      .input-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+        margin-bottom: 25px;
+      }
+
+      .group {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 25px;
+      }
+
+      .group label {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--aqua);
+        font-weight: 800;
+      }
+
+      .field {
+        background: rgba(0, 0, 0, 0.2);
+        border: 1px solid var(--border);
+        padding: 18px 24px;
+        border-radius: 20px;
+        color: #fff;
+        font-size: 1rem;
+        transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .field:focus {
+        outline: none;
+        border-color: var(--aqua);
+        background: rgba(77, 182, 172, 0.05);
+        box-shadow: 0 0 20px rgba(77, 182, 172, 0.1);
+      }
+
+      select.field {
+        appearance: none;
+        cursor: pointer;
+      }
+
+      #join-group,
+      #collab-group,
+      #app-group,
+      #business-group,
+      #complaint-group {
+        display: none;
+      }
+
+      .btn-submit {
+        width: 100%;
+        background: linear-gradient(135deg, var(--teal), var(--aqua));
+        color: #fff;
+        border: none;
+        padding: 22px;
+        border-radius: 20px;
+        font-weight: 800;
+        font-size: 1rem;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: 0.4s;
+        letter-spacing: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .btn-submit:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 121, 107, 0.3);
+      }
+
+      @media (max-width: 1100px) {
+        .wrapper {
+          grid-template-columns: 1fr;
+          padding-top: 120px;
+        }
+
+        .info-side {
+          position: static;
+          text-align: center;
+        }
+
+        .info-side h1 {
+          font-size: 2.8rem;
+        }
+
+        .contact-card {
+          justify-content: center;
+          transform: none !important;
+        }
+      }
+
+      @media (max-width: 650px) {
+        .input-row {
+          grid-template-columns: 1fr;
+        }
+
+        .glass-card {
+          padding: 30px 20px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="aura"></div>
+    <nav>
+      <div class="logo"><a href="../index.html">ZENTH LABS</a></div>
+      <div class="nav">
+        <a href="../index.html#apps"
+          ><i class="fa-solid fa-layer-group"></i> Apps</a
+        >
+        <a href="../index.html#services"
+          ><i class="fa-solid fa-screwdriver-wrench"></i> Services</a
+        >
+      </div>
+    </nav>
+    <main class="wrapper">
+      <div class="info-side">
+        <div class="status-tag"><span class="dot"></span> Team Online</div>
+        <h1>
+          Let's Build & Work <br /><span style="color: var(--aqua)"
+            >Together.</span
+          >
+        </h1>
+        <p>
+          Zenth Labs is always open for innovative ideas and technical
+          collaboration. Whether you need a fix or have a proposal, we're one
+          message away.
+        </p>
+
+        <div class="contact-card">
+          <i class="fa-solid fa-envelope"></i>
+          <div>
+            <h4>Write to us</h4>
+            <p>Available Soon</p>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <i class="fa-brands fa-github"></i>
+          <div>
+            <h4>Open Source</h4>
+            <p>github.com/zenthlabs</p>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <i class="fa-solid fa-location-dot"></i>
+          <div>
+            <h4>Headquarters</h4>
+            <p>Digital/Global Presence</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card">
+        <form id="contactForm">
+          <div class="input-row">
+            <div class="group">
+              <label>Full Name</label>
+              <input
+                type="text"
+                class="field"
+                placeholder="John Doe"
+                required
+              />
+            </div>
+            <div class="group">
+              <label>Email Address</label>
+              <input
+                type="email"
+                class="field"
+                placeholder="john@example.com"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="input-row">
+            <div class="group">
+              <label>Subject of Interest</label>
+              <select class="field" id="mainInquiry" onchange="handleUI()">
+                <option value="general">Send General Message</option>
+                <option value="report">Feedback & Bug Report</option>
+                <option value="join">Join the Team</option>
+                <option value="collab">Collaborate on Project</option>
+                <option value="business">Business Inquiry</option>
+                <option value="complaint">File a Complaint</option>
+              </select>
+            </div>
+
+            <div class="group" id="app-group">
+              <label>Target Product</label>
+              <select class="field" id="appSelect">
+                <option value="smartkit">SmartKit Pro</option>
+                <option value="notes">Smart Notes</option>
+                <option value="web">ZENTH Website</option>
+                <option value="other_app">Other App/Service</option>
+              </select>
+            </div>
+
+            <div class="group" id="join-group">
+              <label>Applying For</label>
+              <select class="field" id="roleSelect">
+                <option value="android">Android Developer</option>
+                <option value="uiux">UI/UX Designer</option>
+                <option value="backend">Backend Developer</option>
+                <option value="other_role">Other Role</option>
+              </select>
+            </div>
+
+            <div class="group" id="collab-group">
+              <label>Open Projects</label>
+              <select class="field" id="projectSelect">
+                <option value="notes">Smart Notes</option>
+                <option value="smartkit">SmartKit</option>
+                <option value="other_collab">Other Project</option>
+              </select>
+            </div>
+
+            <div class="group" id="business-group">
+              <label>Department</label>
+              <select class="field" id="bizSelect">
+                <option value="app_dev">App Development</option>
+                <option value="web_dev">Web Development</option>
+                <option value="ads">Advertising/Ads</option>
+                <option value="other_biz">Other Business</option>
+              </select>
+            </div>
+
+            <div class="group" id="complaint-group">
+              <label>Category</label>
+              <select class="field">
+                <option>Privacy</option>
+                <option>Security</option>
+                <option>Billing</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="group">
+            <label>The Message</label>
+            <textarea
+              id="mainMessage"
+              class="field"
+              rows="5"
+              placeholder="Tell us more about your inquiry..."
+              style="resize: none"
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">
+            Send Message <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </main>
+
+    <footer>
+      <div class="copyright">
+        <p>© 2026 <span class="cr-brand">ZENTH LABS</span></p>
+        <span id="app-version"></span>
+      </div>
+    </footer>
+    <script src="../script.js"></script>
+    <script>
+      function handleUI() {
+        const val = document.getElementById("mainInquiry").value;
+        const msg = document.getElementById("mainMessage");
+        const groups = [
+          "app-group",
+          "join-group",
+          "collab-group",
+          "business-group",
+          "complaint-group",
+        ];
+
+        groups.forEach(
+          (id) => (document.getElementById(id).style.display = "none"),
+        );
+
+        if (val === "report") {
+          document.getElementById("app-group").style.display = "flex";
+          msg.placeholder = "Please describe the bug or share your feedback...";
+        } else if (val === "join") {
+          document.getElementById("join-group").style.display = "flex";
+          msg.placeholder =
+            "Link your portfolio/GitHub and tell us why you want to join...";
+        } else if (val === "collab") {
+          document.getElementById("collab-group").style.display = "flex";
+          msg.placeholder =
+            "Tell us about your contribution ideas for the project...";
+        } else if (val === "business") {
+          document.getElementById("business-group").style.display = "flex";
+          msg.placeholder =
+            "Detail your business requirements or partnership proposal...";
+        } else if (val === "complaint") {
+          document.getElementById("complaint-group").style.display = "flex";
+          msg.placeholder = "Explain your concern in detail...";
+        } else {
+          msg.placeholder = "Tell us more about your inquiry...";
+        }
+      }
+
+      // URL PARAMETER DETECTION
+      window.onload = function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const intent = urlParams.get("i_want_to");
+        const target = urlParams.get("target");
+
+        if (intent) {
+          document.getElementById("mainInquiry").value = intent;
+          handleUI();
+
+          if (target) {
+            const dropdowns = [
+              "roleSelect",
+              "projectSelect",
+              "appSelect",
+              "bizSelect",
+            ];
+            dropdowns.forEach((id) => {
+              const el = document.getElementById(id);
+              if (el) {
+                for (let option of el.options) {
+                  if (option.value === target) {
+                    el.value = target;
+                    break;
+                  }
+                }
+              }
+            });
+          }
+        }
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interest Calculator — ZENITH LABS</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="apps.css" />
+
+    <style>
+      /* --- PAGE SPECIFIC OVERRIDES --- */
+      :root {
+        --gold: #d4af37;
+      }
+
+      .app-icon-frame {
+        border: 1px solid var(--gold);
+        color: var(--gold);
+        box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
+      }
+
+      .v2-tag {
+        background: var(--gold);
+        color: #000;
+        padding: 2px 10px;
+        border-radius: 4px;
+        font-size: 10px;
+        font-weight: 900;
+        vertical-align: middle;
+        margin-left: 8px;
+        text-transform: uppercase;
+      }
+
+      /* Gold Theme for Cards */
+      .premium-card:hover {
+        border-color: var(--gold) !important;
+      }
+
+      .premium-card i {
+        color: var(--gold) !important;
+      }
+
+      .v2-card {
+        background: linear-gradient(
+          135deg,
+          rgba(212, 175, 55, 0.1),
+          transparent
+        ) !important;
+        border: 1px solid rgba(212, 175, 55, 0.3) !important;
+      }
+
+      .v2-card h3 {
+        color: var(--gold) !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div class="logo"><a href="../index.html">ZENTH LABS</a></div>
+      <div class="nav">
+        <a href="../index.html#apps"
+          ><i class="fa-solid fa-layer-group"></i> Apps</a
+        >
+        <a href="../index.html#services"
+          ><i class="fa-solid fa-screwdriver-wrench"></i> Services</a
+        >
+      </div>
+    </nav>
+
+    <section class="app-hero">
+      <div class="app-icon-frame"><i class="fa-solid fa-coins"></i></div>
+      <div class="app-title">
+        <h1>Interest Calc<span class="v2-tag">Upcoming v2.0</span></h1>
+        <p
+          style="
+            color: var(--dim);
+            margin-top: 10px;
+            max-width: 550px;
+            font-size: 15px;
+          "
+        >
+          Fast and accurate financial planning. Calculate Yearly and Monthly
+          interest on loans or savings with detailed visual breakdowns.
+        </p>
+
+        <div class="action-btns">
+          <a href="/apps/interest-calc.apk" class="btn-main" download
+            ><i class="fa-solid fa-download"></i> Download Stable v1.1</a
+          >
+          <a
+            href="../log/updates.html"
+            style="
+              color: var(--gold);
+              text-decoration: none;
+              font-size: 14px;
+              align-self: center;
+              font-weight: 600;
+              margin-left: 10px;
+            "
+            >View Changelog</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <div class="info-bar">
+      <div class="info-item">
+        <h4>Current Build</h4>
+        <p>v1.1.2</p>
+      </div>
+      <div class="info-item">
+        <h4>Calculations</h4>
+        <p>Yearly & Monthly</p>
+      </div>
+      <div class="info-item">
+        <h4>Accuracy</h4>
+        <p>100% Precise</p>
+      </div>
+      <div class="info-item">
+        <h4>Next Update</h4>
+        <p>Multi-Calc v2.0</p>
+      </div>
+    </div>
+
+    <div
+      class="gallery-header"
+      style="display: flex; justify-content: space-between; padding: 20px 8% 0"
+    >
+      <h2 style="color: #fff; font-size: 1.4rem; font-weight: 800">
+        App Gallery
+      </h2>
+      <div class="scroll-indicator" style="color: var(--gold)">
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </div>
+    </div>
+
+    <div class="ss-container">
+      <div class="ss-box"></div>
+      <div class="ss-box"></div>
+      <div class="ss-box"></div>
+    </div>
+
+    <section class="content-section fade" style="padding: 40px 8%">
+      <h2
+        style="
+          margin-bottom: 35px;
+          border-left: 5px solid var(--gold);
+          padding-left: 15px;
+          color: #fff;
+        "
+      >
+        Smart Financial Tools
+      </h2>
+      <div
+        class="highlight-grid"
+        style="
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 30px;
+        "
+      >
+        <div class="premium-card">
+          <i class="fa-solid fa-calendar-check"></i>
+          <h3>Monthly Interest</h3>
+          <p style="font-size: 14px; color: var(--dim); line-height: 1.6">
+            Calculate interest for short-term loans or monthly savings. Perfect
+            for tracking micro-finance and EMI-based calculations.
+          </p>
+        </div>
+        <div class="premium-card">
+          <i class="fa-solid fa-chart-line"></i>
+          <h3>Yearly Growth</h3>
+          <p style="font-size: 14px; color: var(--dim); line-height: 1.6">
+            Analyze long-term investments. See how your money grows over years
+            with a clear breakdown of principal vs. interest.
+          </p>
+        </div>
+        <div class="premium-card v2-card">
+          <i class="fa-solid fa-layer-group"></i>
+          <h3>Upcoming: Multi-Interest</h3>
+          <p style="font-size: 14px; color: var(--dim); line-height: 1.6">
+            <strong>v2.0 Teaser:</strong> Compare multiple interest rates
+            side-by-side and calculate compound interest with custom intervals.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-title">Other apps from The Lab</div>
+    <div class="lab-scroll fade">
+      <a href="smartkit.html" class="lab-card">
+        <h3>
+          <span><i class="fa-solid fa-layer-group"></i> SmartKit</span>
+          <i class="fa-solid fa-chevron-right arrow-icon"></i>
+        </h3>
+        <p>
+          Advanced minimalist dashboard with 15+ essential tools for daily
+          productivity.
+        </p>
+      </a>
+      <a href="pdfmaster.html" class="lab-card">
+        <h3>
+          <span><i class="fa-solid fa-file-pdf"></i> PDF Master</span>
+          <i class="fa-solid fa-chevron-right arrow-icon"></i>
+        </h3>
+        <p>
+          The ultimate PDF toolkit to merge, split, and compress documents
+          instantly.
+        </p>
+      </a>
+      <a href="criptix.html" class="lab-card">
+        <h3>
+          <span><i class="fa-solid fa-user-shield"></i> Criptix</span>
+          <i class="fa-solid fa-chevron-right arrow-icon"></i>
+        </h3>
+        <p>
+          Military-grade AES-256 text encryption to secure your private digital
+          communications.
+        </p>
+      </a>
+      <a href="compressor.html" class="lab-card">
+        <h3>
+          <span><i class="fa-solid fa-file-image"></i> Compressor</span>
+          <i class="fa-solid fa-chevron-right arrow-icon"></i>
+        </h3>
+        <p>
+          Save storage space by compressing large images without losing visual
+          clarity.
+        </p>
+      </a>
+      <a href="date-calc.html" class="lab-card">
+        <h3>
+          <span><i class="fa-solid fa-calendar-days"></i> Date Calc</span>
+          <i class="fa-solid fa-chevron-right arrow-icon"></i>
+        </h3>
+        <p>
+          Precision age tracking and countdowns to your important life events.
+        </p>
+      </a>
+    </div>
+
+    <footer id="contact">
+      <div class="footer-grid footer">
+        <div>
+          <div class="footer-logo">ZENTH LABS</div>
+          <p style="font-size: 13px; line-height: 1.6">
+            Precision utility software and digital solutions built for the
+            future.
+          </p>
+        </div>
+
+        <div>
+          <h4>Platform</h4>
+          <a href="../index.html#apps">Applications</a>
+          <a href="../index.html#services">Services</a>
+          <a href="../log/updates.html">Update Log</a>
+        </div>
+
+        <div>
+          <h4>Company</h4>
+          <a href="../contact/contact.html">Contact Us</a>
+          <a href="../contact/team.html">Credit & Team</a>
+        </div>
+
+        <div>
+          <h4>Legal</h4>
+          <a href="../legal/privacy.html">Privacy Policy</a>
+          <a href="../legal/terms.html">Terms</a>
+        </div>
+
+        <div>
+          <h4>Support</h4>
+          <a href="../contact/contact.html">Report Bug</a>
+          <button
+            class="feedback-btn"
+            onclick="window.location.href = '../contact/feedback.html'"
+            style="margin-top: 15px"
+          >
+            GIVE FEEDBACK
+          </button>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p>© 2026 <span class="cr-brand">ZENTH LABS</span></p>
+        <span id="app-version"></span>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script>
+      const faders = document.querySelectorAll(".fade");
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("show");
+          });
+        },
+        { threshold: 0.1 },
+      );
+      faders.forEach((el) => obs.observe(el));
+    </script>
+  </body>
+</html>

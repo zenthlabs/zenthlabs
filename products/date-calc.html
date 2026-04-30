@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date Calculator — ZENITH LABS</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="apps.css" />
+
+    <style>
+      /* --- PAGE SPECIFIC OVERRIDES --- */
+      :root {
+        --warning: #facc15;
+      }
+
+      .integration-notice {
+        margin-top: 15px;
+        background: rgba(250, 204, 21, 0.05);
+        border-left: 3px solid var(--warning);
+        padding: 12px 20px;
+        font-size: 13px;
+        color: var(--warning);
+        max-width: 600px;
+      }
+
+      .integration-notice a {
+        color: #fff;
+        font-weight: 700;
+        text-decoration: underline;
+      }
+
+      .btn-smartkit {
+        background: #fff;
+        color: #000;
+        padding: 12px 25px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.9rem;
+        transition: 0.3s;
+        display: inline-block;
+      }
+
+      .btn-smartkit:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+      }
+
+      /* Legacy theme tweaks for cards */
+      .premium-card:hover {
+        border-color: var(--warning) !important;
+      }
+
+      .premium-card i {
+        color: var(--warning) !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div class="logo"><a href="../index.html">ZENTH LABS</a></div>
+      <div class="nav">
+        <a href="../index.html#apps"
+          ><i class="fa-solid fa-layer-group"></i> Apps</a
+        >
+        <a href="../index.html#services"
+          ><i class="fa-solid fa-screwdriver-wrench"></i> Services</a
+        >
+      </div>
+    </nav>
+
+    <section class="app-hero">
+      <div class="app-icon-frame">
+        <i class="fa-solid fa-calendar-days"></i>
+      </div>
+      <div class="app-title">
+        <h1>
+          Date Calculator<span
+            class="utility-tag"
+            style="
+              background: rgba(255, 255, 255, 0.1);
+              color: var(--dim);
+              border: 1px solid rgba(255, 255, 255, 0.1);
+            "
+            >Legacy</span
+          >
+        </h1>
+        <p
+          style="
+            color: var(--dim);
+            margin-top: 10px;
+            max-width: 550px;
+            font-size: 15px;
+          "
+        >
+          Simple. Fast. Reliable. The pure focused way to calculate date
+          differences and track your age without any distractions.
+        </p>
+
+        <div class="integration-notice">
+          <i class="fa-solid fa-circle-info"></i>
+          Standalone development has stopped. This tool is now
+          <strong>fully integrated</strong> into <strong>SmartKit</strong>.
+          <a href="smartkit.html">Get the upgraded version.</a>
+        </div>
+
+        <div class="action-btns">
+          <a href="/apps/date-calculator.apk" class="btn-main" download
+            ><i class="fa-solid fa-download"></i> Legacy Download v1.0</a
+          >
+          <a href="smartkit.html" class="btn-smartkit">Check in SmartKit App</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="info-bar">
+      <div class="info-item">
+        <h4>App Type</h4>
+        <p>Ultra Light</p>
+      </div>
+      <div class="info-item">
+        <h4>App Size</h4>
+        <p>1.4 MB</p>
+      </div>
+      <div class="info-item">
+        <h4>Status</h4>
+        <p>Legacy</p>
+      </div>
+      <div class="info-item">
+        <h4>Function</h4>
+        <p>Date Difference</p>
+      </div>
+    </div>
+
+    <div
+      class="gallery-header"
+      style="display: flex; justify-content: space-between; padding: 20px 8% 0"
+    >
+      <h2 style="color: #fff; font-size: 1.4rem; font-weight: 800">
+        App Gallery
+      </h2>
+      <div class="scroll-indicator">
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </div>
+    </div>
+
+    <div class="ss-container">
+      <div class="ss-box"></div>
+      <div class="ss-box"></div>
+      <div class="ss-box"></div>
+    </div>
+
+    <section class="content-section fade" style="padding: 40px 8%">
+      <h2
+        style="
+          margin-bottom: 35px;
+          border-left: 5px solid var(--warning);
+          padding-left: 15px;
+          color: #fff;
+        "
+      >
+        Core Highlights
+      </h2>
+      <div
+        class="highlight-grid"
+        style="
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 30px;
+        "
+      >
+        <div class="premium-card">
+          <i class="fa-solid fa-bolt"></i>
+          <h3>Lightning Speed</h3>
+          <p style="font-size: 14px; color: var(--dim); line-height: 1.6">
+            Ye app turant khulti hai aur zero lag ke saath kaam karti hai. Un
+            devices ke liye best hai jahan storage kam hai.
+          </p>
+        </div>
+        <div class="premium-card">
+          <i class="fa-solid fa-calculator"></i>
+          <h3>Focused Tools</h3>
+          <p style="font-size: 14px; color: var(--dim); line-height: 1.6">
+            Wahi features jo aap use karte hain: Age calculation, Date
+            differences, aur simple countdowns without complications.
+          </p>
+        </div>
+        <div class="premium-card">
+          <i class="fa-solid fa-feather"></i>
+          <h3>Feather Size</h3>
+          <p style="font-size: 14px; color: var(--dim); line-height: 1.6">
+            Sirf 1.4 MB ki ye app aapke phone ke space ko disturb nahi karegi.
+            Single-purpose tool jo apne kaam mein behtareen hai.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-title">Other apps from The Lab</div>
+    <div class="lab-scroll fade">
+      <a
+        href="smartkit.html"
+        class="lab-card"
+        style="border-color: var(--aqua)"
+      >
+        <h3>
+          <span><i class="fa-solid fa-layer-group"></i> SmartKit</span>
+          <i class="fa-solid fa-chevron-right arrow-icon"></i>
+        </h3>
+        <p>
+          Recommended. Advanced dashboard with 15+ daily tools including
+          upgraded Date Calc.
+        </p>
+      </a>
+      <a href="criptix.html" class="lab-card">
+        <h3>
+          <span><i class="fa-solid fa-user-shield"></i> Criptix</span>
+          <i class="fa-solid fa-chevron-right arrow-icon"></i>
+        </h3>
+        <p>
+          Military-grade AES-256 text encryption to secure your private digital
+          communications.
+        </p>
+      </a>
+      <a href="pdfmaster.html" class="lab-card">
+        <h3>
+          <span><i class="fa-solid fa-file-pdf"></i> PDF Master</span>
+          <i class="fa-solid fa-chevron-right arrow-icon"></i>
+        </h3>
+        <p>
+          The ultimate PDF toolkit to merge, split, and compress documents
+          instantly.
+        </p>
+      </a>
+      <a href="compressor.html" class="lab-card">
+        <h3>
+          <span><i class="fa-solid fa-file-image"></i> Compressor</span>
+          <i class="fa-solid fa-chevron-right arrow-icon"></i>
+        </h3>
+        <p>
+          Save storage space by compressing large images without losing visual
+          clarity.
+        </p>
+      </a>
+      <a href="interest-calc.html" class="lab-card">
+        <h3>
+          <span><i class="fa-solid fa-calculator"></i> Interest Calc</span>
+          <i class="fa-solid fa-chevron-right arrow-icon"></i>
+        </h3>
+        <p>
+          Calculate simple and compound interest for loans with detailed
+          summaries.
+        </p>
+      </a>
+    </div>
+
+    <footer id="contact">
+      <div class="footer-grid footer">
+        <div>
+          <div class="footer-logo">ZENTH LABS</div>
+          <p style="font-size: 13px; line-height: 1.6">
+            Precision utility software and digital solutions built for the
+            future.
+          </p>
+        </div>
+
+        <div>
+          <h4>Platform</h4>
+          <a href="../index.html#apps">Applications</a>
+          <a href="../index.html#services">Services</a>
+          <a href="../log/updates.html">Update Log</a>
+        </div>
+
+        <div>
+          <h4>Company</h4>
+          <a href="../contact/contact.html">Contact Us</a>
+          <a href="../contact/team.html">Credit & Team</a>
+        </div>
+
+        <div>
+          <h4>Legal</h4>
+          <a href="../legal/privacy.html">Privacy Policy</a>
+          <a href="../legal/terms.html">Terms</a>
+        </div>
+
+        <div>
+          <h4>Support</h4>
+          <a href="../contact/contact.html">Report Bug</a>
+          <button
+            class="feedback-btn"
+            onclick="window.location.href = '../contact/feedback.html'"
+            style="margin-top: 15px"
+          >
+            GIVE FEEDBACK
+          </button>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p>© 2026 <span class="cr-brand">ZENTH LABS</span></p>
+        <span id="app-version"></span>
+      </div>
+    </footer>
+    <script src="../script.js"></script>
+    <script>
+      const faders = document.querySelectorAll(".fade");
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("show");
+          });
+        },
+        { threshold: 0.1 },
+      );
+      faders.forEach((el) => obs.observe(el));
+    </script>
+  </body>
+</html>

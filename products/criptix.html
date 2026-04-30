@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Criptix — ZENITH LABS</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="apps.css" />
+
+    <style>
+      /* Criptix Specific Theme Tweaks */
+      .premium-card::before {
+        content: "ENCRYPTED";
+        position: absolute;
+        top: 15px;
+        right: -25px;
+        background: #ef4444;
+        color: #fff;
+        font-size: 8px;
+        font-weight: 900;
+        padding: 3px 30px;
+        transform: rotate(45deg);
+      }
+
+      .premium-card:hover {
+        border-color: #ef4444 !important;
+      }
+
+      .premium-card i {
+        color: #ef4444 !important;
+      }
+
+      .btn-beta-closed {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(239, 68, 68, 0.3);
+        color: #ef4444;
+        padding: 14px 28px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.95rem;
+        cursor: not-allowed;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div class="logo"><a href="../index.html">ZENTH LABS</a></div>
+      <div class="nav">
+        <a href="../index.html#apps"
+          ><i class="fa-solid fa-layer-group"></i> Apps</a
+        >
+        <a href="../index.html#services"
+          ><i class="fa-solid fa-screwdriver-wrench"></i> Services</a
+        >
+      </div>
+    </nav>
+    <section class="app-hero">
+      <div class="app-icon-frame" style="border-color: #ef4444; color: #ef4444">
+        <i class="fa-solid fa-user-shield"></i>
+      </div>
+      <div class="app-title">
+        <h1>
+          Criptix<span class="utility-tag" style="background: #ef4444"
+            >Military Grade</span
+          >
+        </h1>
+        <p
+          style="
+            color: var(--dim);
+            margin-top: 10px;
+            max-width: 550px;
+            font-size: 15px;
+          "
+        >
+          Secure your digital conversations with Criptix. Advanced encryption
+          ensures your messages remain private and readable only by the intended
+          recipient.
+        </p>
+        <div class="action-btns">
+          <a href="/apps/criptix.apk" class="btn-main" download
+            ><i class="fa-solid fa-download"></i> Download Stable v1.2</a
+          >
+          <div class="btn-beta-closed">
+            <i class="fa-solid fa-lock"></i> Beta Closed
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="info-bar">
+      <div class="info-item">
+        <h4>Current Version</h4>
+        <p>v1.2.5 (Stable)</p>
+      </div>
+      <div class="info-item">
+        <h4>Last Updated</h4>
+        <p>May 2026</p>
+      </div>
+      <div class="info-item">
+        <h4>App Size</h4>
+        <p>8.2 MB</p>
+      </div>
+      <div class="info-item">
+        <h4>Encryption</h4>
+        <p>AES-256</p>
+      </div>
+    </div>
+
+    <div
+      class="gallery-header"
+      style="display: flex; justify-content: space-between; padding: 20px 8% 0"
+    >
+      <h2 style="color: #fff; font-size: 1.4rem; font-weight: 800">
+        App Gallery
+      </h2>
+      <div class="scroll-indicator">
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </div>
+    </div>
+
+    <div class="ss-container">
+      <div class="ss-box"></div>
+      <div class="ss-box"></div>
+      <div class="ss-box"></div>
+    </div>
+
+    <section class="content-section fade" style="padding: 40px 8%">
+      <h2
+        style="
+          margin-bottom: 35px;
+          border-left: 5px solid #ef4444;
+          padding-left: 15px;
+          color: #fff;
+        "
+      >
+        Security Protocol
+      </h2>
+      <div
+        class="highlight-grid"
+        style="
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 30px;
+        "
+      >
+        <div class="premium-card">
+          <i class="fa-solid fa-key"></i>
+          <h3>Custom Key</h3>
+          <p style="font-size: 14px; color: var(--dim); line-height: 1.6">
+            Set your own private key for every message. Without the exact key,
+            the data remains a meaningless string of characters.
+          </p>
+        </div>
+        <div class="premium-card">
+          <i class="fa-solid fa-cloud-slash"></i>
+          <h3>Zero Cloud</h3>
+          <p style="font-size: 14px; color: var(--dim); line-height: 1.6">
+            Criptix is a localized tool. We never store your keys or messages on
+            any server. Everything stays on your device.
+          </p>
+        </div>
+        <div class="premium-card">
+          <i class="fa-solid fa-mask"></i>
+          <h3>Ghost UI</h3>
+          <p style="font-size: 14px; color: var(--dim); line-height: 1.6">
+            A minimalist and dark interface designed for maximum focus and
+            stealth, perfect for handling sensitive information.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-title">Other apps from The Lab</div>
+    <div class="lab-scroll fade">
+      <a href="smartkit.html" class="lab-card">
+        <h3>
+          <span><i class="fa-solid fa-layer-group"></i> SmartKit</span>
+          <i class="fa-solid fa-chevron-right arrow-icon"></i>
+        </h3>
+        <p>
+          Advanced minimalist dashboard with 15+ essential tools for daily
+          productivity.
+        </p>
+      </a>
+      <a href="pdfmaster.html" class="lab-card">
+        <h3>
+          <span><i class="fa-solid fa-file-pdf"></i> PDF Master</span>
+          <i class="fa-solid fa-chevron-right arrow-icon"></i>
+        </h3>
+        <p>
+          The ultimate PDF toolkit to merge, split, and compress documents
+          instantly.
+        </p>
+      </a>
+      <a href="compressor.html" class="lab-card">
+        <h3>
+          <span><i class="fa-solid fa-file-image"></i> Compressor</span>
+          <i class="fa-solid fa-chevron-right arrow-icon"></i>
+        </h3>
+        <p>
+          Save storage space by compressing large images without losing visual
+          clarity.
+        </p>
+      </a>
+      <a href="interest-calc.html" class="lab-card">
+        <h3>
+          <span><i class="fa-solid fa-calculator"></i> Interest Calc</span>
+          <i class="fa-solid fa-chevron-right arrow-icon"></i>
+        </h3>
+        <p>
+          Calculate simple and compound interest for loans with detailed
+          summaries.
+        </p>
+      </a>
+      <a href="date-calc.html" class="lab-card">
+        <h3>
+          <span><i class="fa-solid fa-calendar-days"></i> Date Calc</span>
+          <i class="fa-solid fa-chevron-right arrow-icon"></i>
+        </h3>
+        <p>
+          Precision age tracking and countdowns to your important life events.
+        </p>
+      </a>
+    </div>
+
+    <section class="report-section fade">
+      <div class="premium-report">
+        <div class="report-content" style="flex: 1; min-width: 250px">
+          <h3 style="color: #fff; margin-bottom: 8px">Security & Feedback</h3>
+          <p style="color: var(--dim); font-size: 14px">
+            Report a security vulnerability or suggest a new encryption
+            algorithm for Criptix.
+          </p>
+        </div>
+        <a
+          href="../contact/collaborate.html"
+          style="
+            background: var(--teal);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            white-space: nowrap;
+          "
+          >Suggest Feature</a
+        >
+      </div>
+    </section>
+    <footer id="contact">
+      <div class="footer-grid footer">
+        <div>
+          <div class="footer-logo">ZENTH LABS</div>
+          <p style="font-size: 13px; line-height: 1.6">
+            Precision utility software and digital solutions built for the
+            future.
+          </p>
+        </div>
+
+        <div>
+          <h4>Platform</h4>
+          <a href="../index.html#apps">Applications</a>
+          <a href="../index.html#services">Services</a>
+          <a href="../log/updates.html">Update Log</a>
+        </div>
+
+        <div>
+          <h4>Company</h4>
+          <a href="../contact/contact.html">Contact Us</a>
+          <a href="../contact/team.html">Credit & Team</a>
+        </div>
+
+        <div>
+          <h4>Legal</h4>
+          <a href="../legal/privacy.html">Privacy Policy</a>
+          <a href="../legal/terms.html">Terms</a>
+        </div>
+
+        <div>
+          <h4>Support</h4>
+          <a href="../contact/contact.html">Report Bug</a>
+          <button
+            class="feedback-btn"
+            onclick="window.location.href = '../contact/feedback.html'"
+            style="margin-top: 15px"
+          >
+            GIVE FEEDBACK
+          </button>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p>© 2026 <span class="cr-brand">ZENTH LABS</span></p>
+        <span id="app-version"></span>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script>
+      const faders = document.querySelectorAll(".fade");
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("show");
+          });
+        },
+        { threshold: 0.1 },
+      );
+      faders.forEach((el) => obs.observe(el));
+    </script>
+  </body>
+</html>

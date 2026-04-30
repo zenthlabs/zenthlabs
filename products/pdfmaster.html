@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PDF Master — ZENITH LABS</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="apps.css" />
+
+    <style>
+      /* --- PAGE SPECIFIC OVERRIDES --- */
+      :root {
+        --warning: #f59e0b;
+      }
+
+      .app-icon-frame {
+        color: #ef4444;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      /* MAINTENANCE ALERT */
+      .maintenance-alert {
+        margin-top: 15px;
+        background: rgba(245, 158, 11, 0.1);
+        border: 1px solid var(--warning);
+        border-radius: 12px;
+        padding: 15px 25px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        max-width: 600px;
+        color: var(--warning);
+      }
+
+      .maintenance-alert i {
+        font-size: 1.5rem;
+      }
+
+      .btn-disabled {
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--dim);
+        padding: 14px 28px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.95rem;
+        cursor: not-allowed;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .btn-beta {
+        background: rgba(0, 121, 107, 0.1);
+        border: 1px solid var(--teal);
+        color: var(--teal);
+        padding: 14px 28px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.95rem;
+        transition: 0.3s;
+      }
+
+      .btn-beta:hover {
+        background: var(--teal);
+        color: #fff;
+      }
+
+      .info-item p {
+        color: var(--aqua) !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div class="logo"><a href="../index.html">ZENTH LABS</a></div>
+      <div class="nav">
+        <a href="../index.html#apps"
+          ><i class="fa-solid fa-layer-group"></i> Apps</a
+        >
+        <a href="../index.html#services"
+          ><i class="fa-solid fa-screwdriver-wrench"></i> Services</a
+        >
+      </div>
+    </nav>
+
+    <section class="app-hero">
+      <div class="app-icon-frame"><i class="fa-solid fa-file-pdf"></i></div>
+      <div class="app-title">
+        <h1>
+          PDF Master<span
+            class="labs-text"
+            style="font-size: 1rem; margin-left: 10px; opacity: 0.6"
+            >(v3.0 Alpha)</span
+          >
+        </h1>
+        <p
+          style="
+            color: var(--dim);
+            margin-top: 10px;
+            max-width: 550px;
+            font-size: 15px;
+          "
+        >
+          The most powerful PDF management toolkit is getting a massive core
+          update. Convert, secure, and manage your documents with military-grade
+          precision.
+        </p>
+
+        <div class="maintenance-alert">
+          <i class="fa-solid fa-screwdriver-wrench"></i>
+          <div>
+            <p style="font-weight: 800; font-size: 14px">
+              Service Temporarily Unavailable
+            </p>
+            <p style="font-size: 12px; opacity: 0.8">
+              We are currently upgrading the PDF engine. The new version will be
+              back soon with a stable public release.
+            </p>
+          </div>
+        </div>
+
+        <div class="action-btns">
+          <div class="btn-disabled">
+            <i class="fa-solid fa-ban"></i> Download Unavailable
+          </div>
+          <a href="collaborate.html" class="btn-beta">Get Notified</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="info-bar">
+      <div class="info-item">
+        <h4>Status</h4>
+        <p style="color: var(--warning)">Maintenance</p>
+      </div>
+      <div class="info-item">
+        <h4>Next Release</h4>
+        <p>Q3 2026</p>
+      </div>
+      <div class="info-item">
+        <h4>Package</h4>
+        <p>18.5 MB</p>
+      </div>
+      <div class="info-item">
+        <h4>Engine</h4>
+        <p>Z-PDF v3.0</p>
+      </div>
+    </div>
+
+    <div
+      class="gallery-header"
+      style="display: flex; justify-content: space-between; padding: 20px 8% 0"
+    >
+      <h2 style="color: #fff; font-size: 1.4rem; font-weight: 800">
+        App Preview
+      </h2>
+      <div class="scroll-indicator">
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </div>
+    </div>
+
+    <div class="ss-container">
+      <div class="ss-box"></div>
+      <div class="ss-box"></div>
+      <div class="ss-box"></div>
+      <div class="ss-box"></div>
+      <div class="ss-box"></div>
+    </div>
+
+    <section class="content-section fade" style="padding: 40px 8%">
+      <h2
+        style="
+          margin-bottom: 35px;
+          border-left: 5px solid var(--teal);
+          padding-left: 15px;
+          color: #fff;
+        "
+      >
+        What's Coming in v3.0?
+      </h2>
+      <div
+        class="highlight-grid"
+        style="
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+          gap: 25px;
+        "
+      >
+        <div class="premium-card">
+          <i class="fa-solid fa-file-export"></i>
+          <h3>Image-PDF Conversion</h3>
+          <p style="font-size: 14px; color: var(--dim); line-height: 1.6">
+            Convert multiple images into a single high-quality PDF or extract
+            high-resolution images from any PDF document effortlessly.
+          </p>
+        </div>
+        <div class="premium-card">
+          <i class="fa-solid fa-lock"></i>
+          <h3>Secure Lock/Unlock</h3>
+          <p style="font-size: 14px; color: var(--dim); line-height: 1.6">
+            Add strong password protection to your sensitive documents or remove
+            existing passwords for easy access with one-tap tools.
+          </p>
+        </div>
+        <div class="premium-card">
+          <i class="fa-solid fa-file-zipper"></i>
+          <h3>Advanced Compression</h3>
+          <p style="font-size: 14px; color: var(--dim); line-height: 1.6">
+            Reduce PDF file size significantly while maintaining text clarity
+            and image resolution for professional use.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-title">Other apps from The Lab</div>
+    <div class="lab-scroll fade">
+      <a
+        href="smartkit.html"
+        class="lab-card"
+        style="border-color: var(--aqua)"
+      >
+        <h3>
+          <span><i class="fa-solid fa-layer-group"></i> SmartKit</span>
+          <i class="fa-solid fa-chevron-right arrow-icon"></i>
+        </h3>
+        <p>
+          Recommended. Advanced dashboard with 15+ essential tools including PDF
+          features.
+        </p>
+      </a>
+      <a href="criptix.html" class="lab-card">
+        <h3>
+          <span><i class="fa-solid fa-user-shield"></i> Criptix</span>
+          <i class="fa-solid fa-chevron-right arrow-icon"></i>
+        </h3>
+        <p>
+          Military-grade AES-256 text encryption to secure your private digital
+          communications.
+        </p>
+      </a>
+      <a href="compressor.html" class="lab-card">
+        <h3>
+          <span><i class="fa-solid fa-file-image"></i> Compressor</span>
+          <i class="fa-solid fa-chevron-right arrow-icon"></i>
+        </h3>
+        <p>
+          Save storage space by compressing large images without losing visual
+          clarity.
+        </p>
+      </a>
+      <a href="interest-calc.html" class="lab-card">
+        <h3>
+          <span><i class="fa-solid fa-calculator"></i> Interest Calc</span>
+          <i class="fa-solid fa-chevron-right arrow-icon"></i>
+        </h3>
+        <p>
+          Calculate simple and compound interest for loans with detailed
+          summaries.
+        </p>
+      </a>
+      <a href="date-calc.html" class="lab-card">
+        <h3>
+          <span><i class="fa-solid fa-calendar-days"></i> Date Calc</span>
+          <i class="fa-solid fa-chevron-right arrow-icon"></i>
+        </h3>
+        <p>
+          Precision age tracking and countdowns to your important life events.
+        </p>
+      </a>
+    </div>
+
+    <footer id="contact">
+      <div class="footer-grid footer">
+        <div>
+          <div class="footer-logo">ZENTH LABS</div>
+          <p style="font-size: 13px; line-height: 1.6">
+            Precision utility software and digital solutions built for the
+            future.
+          </p>
+        </div>
+
+        <div>
+          <h4>Platform</h4>
+          <a href="../index.html#apps">Applications</a>
+          <a href="../index.html#services">Services</a>
+          <a href="../log/updates.html">Update Log</a>
+        </div>
+
+        <div>
+          <h4>Company</h4>
+          <a href="../contact/contact.html">Contact Us</a>
+          <a href="../contact/team.html">Credit & Team</a>
+        </div>
+
+        <div>
+          <h4>Legal</h4>
+          <a href="../legal/privacy.html">Privacy Policy</a>
+          <a href="../legal/terms.html">Terms</a>
+        </div>
+
+        <div>
+          <h4>Support</h4>
+          <a href="../contact/contact.html">Report Bug</a>
+          <button
+            class="feedback-btn"
+            onclick="window.location.href = '../contact/feedback.html'"
+            style="margin-top: 15px"
+          >
+            GIVE FEEDBACK
+          </button>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p>© 2026 <span class="cr-brand">ZENTH LABS</span></p>
+        <span id="app-version"></span>
+      </div>
+    </footer>
+    <script src="../script.js"></script>
+    <script>
+      const faders = document.querySelectorAll(".fade");
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("show");
+          });
+        },
+        { threshold: 0.1 },
+      );
+      faders.forEach((el) => obs.observe(el));
+    </script>
+  </body>
+</html>

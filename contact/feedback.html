@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedback — Zenth Labs</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+      /* --- FEEDBACK PAGE STYLING --- */
+      .feedback-container {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 120px 5% 80px;
+        background: radial-gradient(
+          circle at center,
+          rgba(77, 182, 172, 0.1),
+          transparent 70%
+        );
+      }
+
+      .feedback-card {
+        background: linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.05) 0%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 25px;
+        padding: 40px;
+        width: 100%;
+        max-width: 600px;
+        transition: 0.4s;
+      }
+
+      /* Stars at the Top */
+      .stars-top {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      .stars-top input {
+        display: none;
+      }
+
+      .stars-top label {
+        font-size: 32px;
+        color: rgba(255, 255, 255, 0.1);
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .stars-top label:hover,
+      .stars-top label:hover ~ label,
+      .stars-top input:checked ~ label {
+        color: #ffd700;
+      }
+
+      .feedback-header {
+        text-align: center;
+        margin-bottom: 35px;
+      }
+
+      .feedback-header h1 {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--white);
+        margin-bottom: 10px;
+      }
+
+      .feedback-header p {
+        color: var(--dim);
+        font-size: 0.9rem;
+      }
+
+      /* Form Styling */
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--aqua);
+      }
+
+      .input-control {
+        width: 100%;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 14px;
+        color: #fff;
+        font-size: 0.95rem;
+        outline: none;
+        transition: 0.3s;
+      }
+
+      .input-control:focus {
+        border-color: var(--aqua);
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+      }
+
+      select.input-control {
+        cursor: pointer;
+      }
+
+      select option {
+        background: #0a0a0a;
+        color: #fff;
+      }
+
+      #success-msg {
+        display: none;
+        text-align: center;
+        padding: 20px 0;
+      }
+
+      #success-msg i {
+        font-size: 3.5rem;
+        color: var(--aqua);
+        margin-bottom: 15px;
+      }
+
+      @media (max-width: 600px) {
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* --- MODERN SUBMIT BUTTON --- */
+      .submit-container {
+        margin-top: 25px;
+        position: relative;
+      }
+
+      .btn-modern {
+        width: 100%;
+        padding: 16px;
+        border: none;
+        border-radius: 14px;
+        background: linear-gradient(45deg, var(--teal), var(--aqua));
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        box-shadow: 0 10px 20px rgba(0, 121, 107, 0.2);
+      }
+
+      .btn-modern i {
+        transition: transform 0.4s ease;
+      }
+
+      /* Hover Effects */
+      .btn-modern:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px rgba(0, 121, 107, 0.4);
+        filter: brightness(1.1);
+      }
+
+      .btn-modern:hover i {
+        transform: translateX(5px) scale(1.1);
+      }
+
+      /* Button Shine Effect */
+      .btn-modern::after {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -60%;
+        width: 20%;
+        height: 200%;
+        background: rgba(255, 255, 255, 0.2);
+        transform: rotate(30deg);
+        transition: all 0.6s ease;
+      }
+
+      .btn-modern:hover::after {
+        left: 120%;
+      }
+
+      .btn-modern:active {
+        transform: translateY(-1px) scale(0.98);
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div class="logo"><a href="../index.html">ZENTH LABS</a></div>
+      <div class="nav">
+        <a href="../index.html#apps"
+          ><i class="fa-solid fa-layer-group"></i> Apps</a
+        >
+        <a href="../index.html#services"
+          ><i class="fa-solid fa-screwdriver-wrench"></i> Services</a
+        >
+      </div>
+    </nav>
+
+    <main class="feedback-container">
+      <div class="feedback-card">
+        <div id="form-content">
+          <div class="stars-top">
+            <input type="radio" name="rating" id="star5" value="5" /><label
+              for="star5"
+              ><i class="fa-solid fa-star"></i
+            ></label>
+            <input type="radio" name="rating" id="star4" value="4" /><label
+              for="star4"
+              ><i class="fa-solid fa-star"></i
+            ></label>
+            <input type="radio" name="rating" id="star3" value="3" /><label
+              for="star3"
+              ><i class="fa-solid fa-star"></i
+            ></label>
+            <input type="radio" name="rating" id="star2" value="2" /><label
+              for="star2"
+              ><i class="fa-solid fa-star"></i
+            ></label>
+            <input type="radio" name="rating" id="star1" value="1" /><label
+              for="star1"
+              ><i class="fa-solid fa-star"></i
+            ></label>
+          </div>
+
+          <div class="feedback-header">
+            <h1>Give Feedback</h1>
+            <p>Tell us what you think. We read every message.</p>
+          </div>
+
+          <form id="feedbackForm">
+            <div class="form-group">
+              <label>Your Email (Optional)</label>
+              <input
+                type="email"
+                class="input-control"
+                placeholder="email@example.com"
+              />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>I am a...</label>
+                <select id="userType" class="input-control" required>
+                  <option value="general" selected>General Visitor</option>
+                  <option value="user">Product User</option>
+                  <option value="partner">Business Partner</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Subject</label>
+                <select id="category" class="input-control" required>
+                  <option value="ui">Design & UI</option>
+                  <option value="speed">Speed & Performance</option>
+                  <option value="other_gen">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Your Message</label>
+              <textarea
+                class="input-control"
+                rows="5"
+                placeholder="Write your feedback here..."
+                required
+              ></textarea>
+            </div>
+
+            <div class="submit-container">
+              <button type="submit" class="btn-modern">
+                <span>Send Feedback</span>
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div id="success-msg">
+          <i class="fa-solid fa-circle-check"></i>
+          <h2>Thank You!</h2>
+          <p style="color: var(--dim); margin-bottom: 25px">
+            Your feedback has been sent successfully.
+          </p>
+          <a href="index.html" class="btn">Back to Home</a>
+        </div>
+      </div>
+    </main>
+
+    <footer id="contact">
+      <div class="footer-grid footer">
+        <div>
+          <div class="footer-logo">ZENTH LABS</div>
+          <p style="font-size: 13px; line-height: 1.6">
+            Precision utility software and digital solutions built for the
+            future.
+          </p>
+        </div>
+        <div>
+          <h4>Platform</h4>
+          <a href="../index.html#apps">Applications</a>
+          <a href="../index.html#services">Services</a>
+          <a href="../log/updates.html">Update Log</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="team.html">Credit & Team</a>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <a href="../legal/privacy.html">Privacy Policy</a>
+          <a href="../legal/terms.html">Terms</a>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <a href="contact.html">Report Bug</a>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>© 2026 <span class="cr-brand">ZENTH LABS</span></p>
+        <span id="app-version"></span>
+      </div>
+    </footer>
+    <script src="../script.js"></script>
+    <script>
+      // Dropdown Change Logic
+      const userType = document.getElementById("userType");
+      const category = document.getElementById("category");
+
+      const optionsMap = {
+        general: [
+          { val: "ui", text: "Design & UI" },
+          { val: "speed", text: "Speed & Performance" },
+          { val: "other_gen", text: "Other" },
+        ],
+        user: [
+          { val: "bug", text: "Report a Bug" },
+          { val: "feature", text: "Request a Feature" },
+          { val: "crash", text: "App is Crashing" },
+          { val: "other_user", text: "General Product Help" },
+        ],
+        partner: [
+          { val: "collab", text: "Collaboration" },
+          { val: "ads", text: "Advertising" },
+          { val: "api", text: "API Access" },
+          { val: "other_partner", text: "Other Business" },
+        ],
+        other: [
+          { val: "career", text: "Jobs / Hiring" },
+          { val: "misc", text: "Miscellaneous" },
+        ],
+      };
+
+      userType.addEventListener("change", function () {
+        const selected = this.value;
+        const options = optionsMap[selected];
+        category.innerHTML = "";
+        options.forEach((opt) => {
+          const el = document.createElement("option");
+          el.value = opt.val;
+          el.textContent = opt.text;
+          category.appendChild(el);
+        });
+      });
+
+      // Form Submission UI
+      document
+        .getElementById("feedbackForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          document.getElementById("form-content").style.display = "none";
+          document.getElementById("success-msg").style.display = "block";
+        });
+    </script>
+  </body>
+</html>

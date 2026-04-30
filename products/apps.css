@@ -1,0 +1,314 @@
+/* --- ZENITH LABS - APPS COMMON STYLES --- */
+
+:root {
+  --bg: #0b1014;
+  --card: rgba(255, 255, 255, 0.04);
+  --teal: #00796b;
+  --aqua: #4db6ac;
+  --text: #e6fffa;
+  --dim: #94a3b8;
+}
+
+/* Base Layout */
+.app-hero {
+  padding: 130px 8% 40px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.app-icon-frame {
+  width: 130px;
+  height: 130px;
+  background: var(--card);
+  border-radius: 30px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+  color: var(--aqua);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.app-title h1 {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #fff;
+}
+
+.utility-tag {
+  background: var(--teal);
+  color: #fff;
+  padding: 2px 10px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 900;
+  vertical-align: middle;
+  margin-left: 8px;
+  text-transform: uppercase;
+}
+
+/* Action Buttons */
+.action-btns {
+  margin-top: 25px;
+  display: flex;
+  gap: 12px;
+}
+
+.btn-main {
+  background: var(--teal);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-main:hover {
+  transform: translateY(-3px);
+  background: var(--aqua);
+}
+
+.btn-beta {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--aqua);
+  color: var(--aqua);
+  padding: 14px 28px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+
+/* Info Bar & Gallery */
+.info-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 15px;
+  background: var(--card);
+  padding: 20px;
+  border-radius: 18px;
+  margin: 20px 8%;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
+}
+
+.info-item h4 {
+  color: var(--dim);
+  font-size: 10px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.info-item p {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--aqua);
+}
+
+.ss-container {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  padding: 20px 8% 40px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.ss-container::-webkit-scrollbar {
+  display: none;
+}
+
+.ss-box {
+  min-width: 220px;
+  height: 390px;
+  background: #161b22;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  scroll-snap-align: start;
+}
+
+/* Section Headers */
+.section-title {
+  font-size: 1.2rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 0 8%;
+  margin: 40px 0 10px;
+}
+
+/* Update Log */
+.log-box {
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 22px;
+  padding: 25px;
+  margin: 10px 8% 40px;
+}
+
+.log-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.log-entry:last-child {
+  border-bottom: none;
+}
+
+.log-ver {
+  color: var(--aqua);
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.log-date {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.2);
+  font-weight: 600;
+}
+
+/* Other Apps from The Lab (Tiles) */
+.lab-scroll {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 15px 8% 50px;
+  scrollbar-width: none;
+}
+
+.lab-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.lab-card {
+  min-width: 270px;
+  background: #0d1317;
+  padding: 30px 18px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  text-decoration: none;
+  color: inherit;
+  transition: 0.4s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.lab-card:hover {
+  border-color: var(--aqua);
+  transform: scale(1.02);
+}
+
+.lab-card h3 {
+  color: var(--aqua);
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lab-card h3 i.arrow-icon {
+  font-size: 0.9rem;
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+.lab-card:hover h3 i.arrow-icon {
+  opacity: 1;
+  transform: translateX(5px);
+}
+
+.lab-card p {
+  font-size: 13px;
+  color: var(--dim);
+  line-height: 1.6;
+}
+
+/* Report / Feedback Box */
+.premium-report {
+  background: linear-gradient(135deg, rgba(0, 121, 107, 0.15), transparent);
+  border: 1px solid rgba(0, 121, 107, 0.3);
+  padding: 40px;
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 0 8% 30px;
+}
+
+/* Animations */
+@keyframes bounceX {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(8px);
+  }
+}
+
+.scroll-indicator {
+  color: var(--aqua);
+  animation: bounceX 2s infinite;
+  font-size: 1.4rem;
+}
+/* Features Grid Layout */
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+/* Premium Card Base Styling */
+.premium-card {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 35px;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.premium-card:hover {
+  border-color: var(--teal);
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.premium-card i {
+  color: var(--aqua);
+  font-size: 2rem;
+  margin-bottom: 25px;
+  display: block;
+}
+
+.premium-card h3 {
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+.premium-card p {
+  font-size: 14px;
+  color: var(--dim);
+  line-height: 1.6;
+}
