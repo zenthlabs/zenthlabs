@@ -1,118 +1,469 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Zenth Labs — Ultra</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zenth Labs — Ultra Premium</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* --- HERO --- */
+      .aura {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background:
+          radial-gradient(
+            circle at 0% 0%,
+            rgba(0, 121, 107, 0.12) 0%,
+            transparent 40%
+          ),
+          radial-gradient(
+            circle at 100% 100%,
+            rgba(77, 182, 172, 0.08) 0%,
+            transparent 40%
+          );
+        z-index: -1;
+      }
 
-<style>
-:root{--bg:#0b1014;--card:rgba(255,255,255,0.04);--glass:rgba(255,255,255,0.06);--teal:#00796b;--aqua:#4db6ac;--text:#e6fffa;--dim:#94a3b8}
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
-body{background:var(--bg);color:var(--text);overflow-x:hidden}
-nav{position:fixed;top:0;width:100%;height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 8%;backdrop-filter:blur(12px);z-index:999;border-bottom:1px solid rgba(255,255,255,.05)}
-.logo{font-weight:900;letter-spacing:2px}.logo span{color:var(--aqua)}
-.nav a{margin-left:22px;color:var(--dim);text-decoration:none;font-weight:600;transition:.3s}.nav a:hover{color:var(--aqua)}
-.hero{height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 20px;background:radial-gradient(circle at center,rgba(0,121,107,.12),transparent 70%)}
-.hero h1{font-size:clamp(42px,8vw,80px);font-weight:900;letter-spacing:-2px;background:linear-gradient(90deg,#00796b,#4db6ac,#ffffff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero p{color:var(--dim);max-width:650px;margin:20px 0}
-.btn{background:linear-gradient(45deg,#00796b,#4db6ac);padding:14px 40px;border-radius:50px;color:#fff;text-decoration:none;font-weight:700;box-shadow:0 10px 25px rgba(0,121,107,.3);transition:.3s}
-.btn:hover{transform:scale(1.05)}
-.section{padding:90px 8%}.section h2{text-align:center;margin-bottom:40px;font-weight:800}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
-.card{background:var(--card);padding:28px;border-radius:22px;border:1px solid rgba(255,255,255,.05);transition:.3s}
-.card:hover{transform:translateY(-6px);border-color:var(--aqua)}
-.card h3{color:var(--aqua);margin-bottom:10px}
-.card p{color:var(--dim);font-size:14px}
-.service{background:var(--glass);padding:25px;border-radius:18px;text-align:center;border:1px dashed rgba(255,255,255,.1);transition:.3s}
-.service:hover{transform:scale(1.03)}
-footer{background:#06090c;padding:70px 8% 30px;border-top:1px solid rgba(255,255,255,.05)}
-.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px}
-.footer h4{margin-bottom:15px}
-.footer a{display:block;color:var(--dim);text-decoration:none;margin:6px 0}
-.footer a:hover{color:var(--aqua)}
-.input{margin-top:10px;padding:10px;border-radius:8px;border:none;width:100%}
-.subscribe{margin-top:10px;background:var(--teal);border:none;padding:10px;border-radius:8px;color:white;width:100%}
-.fade{opacity:0;transform:translateY(40px);transition:.6s}.fade.show{opacity:1;transform:none}
-</style>
-</head>
-<body>
+      .hero {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0 5%;
+        background: radial-gradient(
+          circle at center,
+          rgba(77, 182, 172, 0.1),
+          transparent 70%
+        );
+        position: relative;
+        overflow: hidden;
+      }
 
-<nav>
-<div class="logo">ZENTH<span>LABS</span></div>
-<div class="nav">
-<a href="#apps">Apps</a>
-<a href="#services">Services</a>
-<a href="#contact">Contact</a>
-</div>
-</nav>
+      .hero h1 {
+        font-size: clamp(38px, 8vw, 85px);
+        font-weight: 800;
+        letter-spacing: -2px;
+        background: linear-gradient(90deg, #ffffff, #4db6ac, #00796b, #ffffff);
+        background-size: 300% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: shine 8s linear infinite;
+        max-width: 100%;
+      }
 
-<section class="hero">
-<h1>ZENTH LABS</h1>
-<p>Lightweight utility apps & smart digital services for everyday productivity.</p>
-<a href="#apps" class="btn">Explore Apps</a>
-</section>
+      @keyframes shine {
+        to {
+          background-position: 300% center;
+        }
+      }
 
-<!-- APPS -->
-<section class="section fade" id="apps">
-<h2>Our Apps</h2>
-<div class="grid">
-<div class="card"><h3>SmartKit Premium</h3><p>All-in-one tool suite with calculator, converter, notes & more.</p></div>
-<div class="card"><h3>Criptix</h3><p>Secure text encryption tool for private data protection.</p></div>
-<div class="card"><h3>PDF Master</h3><p>Lock, unlock & manage PDFs with security features.</p></div>
-<div class="card"><h3>Interest Calc</h3><p>Simple & compound interest calculator for finance use.</p></div>
-<div class="card"><h3>Image Compressor</h3><p>Reduce image size without losing quality.</p></div>
-<div class="card"><h3>Date Calculator</h3><p>Calculate age, duration & date differences easily.</p></div>
-<div class="card"><h3>Notes</h3><p>Smart notes with pin, archive & secure storage.</p></div>
-<div class="card"><h3>Upcoming</h3><p>More powerful tools coming soon.</p></div>
-</div>
-</section>
+      .hero p {
+        color: var(--dim);
+        max-width: 600px;
+        margin: 25px auto 40px;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
 
-<!-- SERVICES -->
-<section class="section fade" id="services">
-<h2>Our Services</h2>
-<div class="grid">
-<div class="service"><h3>App Development</h3><p>Custom Android apps with modern UI & performance.</p></div>
-<div class="service"><h3>Web Development</h3><p>Responsive websites for business & portfolio.</p></div>
-<div class="service"><h3>Study Material</h3><p>Structured digital content for students.</p></div>
-<div class="service"><h3>Advertisement</h3><p>Promote your apps & services digitally.</p></div>
-<div class="service"><h3>UI Optimization</h3><p>Improve design, speed & user experience.</p></div>
-</div>
-</section>
+      .btn {
+        background: linear-gradient(45deg, var(--teal), var(--aqua));
+        padding: 16px 45px;
+        border-radius: 50px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        box-shadow: 0 10px 30px rgba(0, 121, 107, 0.3);
+        transition: 0.4s;
+      }
 
-<footer id="contact">
-<div class="footer-grid footer">
-<div>
-<h4>Zenth Labs</h4>
-<p>Building smart utility software.</p>
-</div>
-<div>
-<h4>Links</h4>
-<a href="#apps">Apps</a>
-<a href="#services">Services</a>
-<a href="#">Privacy</a>
-<a href="#">Terms</a>
-</div>
-<div>
-<h4>Support</h4>
-<a href="#">Help</a>
-<a href="#">Report Bug</a>
-<a href="#">Feedback</a>
-</div>
-<div>
-<h4>Newsletter</h4>
-<input class="input" placeholder="Email">
-<button class="subscribe">Subscribe</button>
-</div>
-</div>
-<p style="text-align:center;margin-top:30px;color:gray">© 2026 Zenth Labs</p>
-</footer>
+      /* --- CARDS & TAGS --- */
+      .section {
+        padding: 80px 8%;
+      }
 
-<script>
-const faders=document.querySelectorAll('.fade');
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')})});
-faders.forEach(el=>obs.observe(el));
-</script>
+      .section h2 {
+        text-align: center;
+        margin-bottom: 50px;
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: var(--white);
+      }
 
-</body>
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+      }
+
+      .card {
+        background: linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.05) 0%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        padding: 30px;
+        border-radius: 25px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: 0.4s;
+        text-decoration: none;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card:hover {
+        transform: translateY(-8px);
+        border-color: var(--aqua);
+        background: rgba(77, 182, 172, 0.05);
+      }
+
+      .tag-container {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 15px;
+        flex-wrap: wrap;
+      }
+
+      .tag {
+        font-size: 10px;
+        font-weight: 800;
+        text-transform: uppercase;
+        padding: 4px 10px;
+        border-radius: 4px;
+        letter-spacing: 0.5px;
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--dim);
+      }
+
+      .tag.free {
+        background: rgba(77, 182, 172, 0.1);
+        color: var(--aqua);
+      }
+
+      .tag.premium {
+        background: rgba(255, 215, 0, 0.1);
+        color: #ffd700;
+      }
+
+      .tag.new {
+        background: #00796b;
+        color: #fff;
+      }
+
+      .tag.upcoming {
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        border: 1px dashed var(--dim);
+      }
+
+      .card h3 {
+        color: var(--white);
+        margin-bottom: 12px;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .card h3 i {
+        color: var(--aqua);
+      }
+
+      .card p {
+        color: var(--dim);
+        font-size: 14px;
+        line-height: 1.7;
+      }
+
+      .service {
+        background: var(--glass);
+        padding: 35px 25px;
+        border-radius: 22px;
+        text-align: center;
+        border: 1px dashed rgba(255, 255, 255, 0.1);
+        transition: 0.3s;
+      }
+
+      .service:hover {
+        border-style: solid;
+        border-color: var(--aqua);
+        transform: scale(1.03);
+      }
+
+      .service i {
+        font-size: 1.8rem;
+        color: var(--aqua);
+        margin-bottom: 12px;
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="aura"></div>
+    <nav>
+      <div class="logo">ZENTH LABS</div>
+      <div class="nav">
+        <a href="#apps"><i class="fa-solid fa-layer-group"></i> Apps</a>
+        <a href="#services"
+          ><i class="fa-solid fa-screwdriver-wrench"></i> Services</a
+        >
+      </div>
+    </nav>
+
+    <section class="hero">
+      <h1>ZENTH LABS</h1>
+      <p>
+        Precision utility software and premium digital services crafted for
+        seamless performance and modern aesthetics.
+      </p>
+      <a href="#apps" class="btn">Explore All</a>
+    </section>
+
+    <section class="section fade" id="apps">
+      <h2>Native Applications</h2>
+      <div class="grid">
+        <a href="products/smartkit.html" class="card">
+          <div class="tag-container">
+            <span class="tag premium">Premium</span>
+            <span class="tag">Utility</span>
+          </div>
+          <h3><i class="fa-solid fa-toolbox"></i> SmartKit Pro</h3>
+          <p>
+            Elite tool suite with BMI tracker, secure password engine, and
+            advanced converters.
+          </p>
+        </a>
+
+        <a href="products/criptix.html" class="card">
+          <div class="tag-container">
+            <span class="tag free">Free</span>
+            <span class="tag new">New Update</span>
+          </div>
+          <h3><i class="fa-solid fa-shield-halved"></i> Criptix</h3>
+          <p>
+            Military-grade text encryption tool using dual-layer private data
+            protection.
+          </p>
+        </a>
+
+        <a href="products/pdfmaster.html" class="card">
+          <div class="tag-container">
+            <span class="tag free">Free</span>
+            <span class="tag">Secure</span>
+          </div>
+          <h3><i class="fa-solid fa-file-pdf"></i> PDF Master</h3>
+          <p>
+            Professional toolkit to lock, unlock & manage PDFs with zero quality
+            loss.
+          </p>
+        </a>
+
+        <a href="products/interest-calc.html" class="card">
+          <div class="tag-container">
+            <span class="tag free">Free</span>
+            <span class="tag">Lightweight</span>
+          </div>
+          <h3><i class="fa-solid fa-calculator"></i> Interest Calc</h3>
+          <p>
+            Precise financial engine for Simple & Compound interest
+            calculations.
+          </p>
+        </a>
+
+        <a href="products/compressor.html" class="card">
+          <div class="tag-container">
+            <span class="tag free">Free</span>
+            <span class="tag">Fast</span>
+          </div>
+          <h3><i class="fa-solid fa-image"></i> Image Shrink</h3>
+          <p>
+            Lossless image compression tool optimized for web and storage
+            efficiency.
+          </p>
+        </a>
+
+        <a href="products/date-calc.html" class="card">
+          <div class="tag-container">
+            <span class="tag free">Free</span>
+            <span class="tag">Precise</span>
+          </div>
+          <h3><i class="fa-solid fa-calendar-days"></i> Chronos Calc</h3>
+          <p>
+            Advanced date engine to calculate age, intervals, and durations
+            instantly.
+          </p>
+        </a>
+
+        <a href="products/notes.html" class="card">
+          <div class="tag-container">
+            <span class="tag free">Free</span>
+            <span class="tag upcoming">Upcoming</span>
+          </div>
+          <h3><i class="fa-solid fa-note-sticky"></i> Smart Notes</h3>
+          <p>
+            Secure note-taking with localized storage, pin protection, and
+            archiving.
+          </p>
+        </a>
+
+        <a
+          href="products/beta.html"
+          class="card"
+          style="border: 1px dashed var(--aqua); opacity: 0.7"
+        >
+          <div class="tag-container">
+            <span class="tag upcoming">In Progress</span>
+          </div>
+          <h3><i class="fa-solid fa-flask"></i> Beta Lab</h3>
+          <p>
+            New innovative tools are in the design phase. Stay tuned for the
+            next drop.
+          </p>
+        </a>
+      </div>
+    </section>
+
+    <section
+      class="section fade"
+      id="services"
+      style="background: rgba(255, 255, 255, 0.01)"
+    >
+      <h2>Elite Services</h2>
+      <div class="grid">
+        <a
+          href="services.html#app-dev"
+          style="text-decoration: none; color: inherit"
+        >
+          <div class="service">
+            <i class="fa-solid fa-mobile-screen"></i>
+            <h3>App Development</h3>
+            <p>High-performance native Android/iOS applications.</p>
+          </div>
+        </a>
+
+        <a
+          href="services.html#web-solutions"
+          style="text-decoration: none; color: inherit"
+        >
+          <div class="service">
+            <i class="fa-solid fa-code"></i>
+            <h3>Web Solutions</h3>
+            <p>Modern responsive websites and scalable web apps.</p>
+          </div>
+        </a>
+
+        <a
+          href="services.html#study-material"
+          style="text-decoration: none; color: inherit"
+        >
+          <div class="service">
+            <i class="fa-solid fa-book-open"></i>
+            <h3>Study Material</h3>
+            <p>Curated digital notes and structured content for students.</p>
+          </div>
+        </a>
+
+        <a
+          href="services.html#advertisement"
+          style="text-decoration: none; color: inherit"
+        >
+          <div class="service">
+            <i class="fa-solid fa-bullhorn"></i>
+            <h3>Advertisement</h3>
+            <p>Digital promotion and branding for your apps & services.</p>
+          </div>
+        </a>
+
+        <a
+          href="services.html#ui-ux"
+          style="text-decoration: none; color: inherit"
+        >
+          <div class="service">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            <h3>UI/UX Design</h3>
+            <p>Refining user interfaces for better speed and experience.</p>
+          </div>
+        </a>
+
+        <a
+          href="services.html#pc-repair"
+          style="text-decoration: none; color: inherit"
+        >
+          <div class="service">
+            <i class="fa-solid fa-laptop-medical"></i>
+            <h3>Computer Repair</h3>
+            <p>Diagnostic, hardware fix, and OS optimization services.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <footer id="contact">
+      <div class="footer-grid footer">
+        <div>
+          <div class="footer-logo">ZENTH LABS</div>
+          <p style="font-size: 13px; line-height: 1.6">
+            Precision utility software and digital solutions built for the
+            future.
+          </p>
+        </div>
+
+        <div>
+          <h4>Platform</h4>
+          <a href="#apps">Applications</a>
+          <a href="#services">Services</a>
+          <a href="log/updates.html">Update Log</a>
+        </div>
+
+        <div>
+          <h4>Company</h4>
+          <a href="contact/about.html">About Us</a>
+          <a href="contact/contact.html">Contact Us</a>
+          <a href="contact/team.html">Credit & Team</a>
+        </div>
+
+        <div>
+          <h4>Legal</h4>
+          <a href="legal/privacy.html">Privacy Policy</a>
+          <a href="legal/terms.html">Terms</a>
+        </div>
+
+        <div>
+          <h4>Support</h4>
+          <a href="contact/contact.html">Report Bug</a>
+          <button
+            class="feedback-btn"
+            onclick="window.location.href = 'contact/feedback.html'"
+            style="margin-top: 15px"
+          >
+            GIVE FEEDBACK
+          </button>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p>
+          © 2026 <span class="cr-brand">ZENTH LABS</span> — ALL RIGHTS RESERVED
+        </p>
+        <span id="app-version"></span>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
 </html>
