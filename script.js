@@ -1,7 +1,7 @@
 // common script.js
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Version Update
-    const currentVersion = "2.8.0";
+    const currentVersion = "2.9.0";
     const versionElement = document.getElementById('app-version');
     if (versionElement) versionElement.innerText = `V [${currentVersion}]`;
 
