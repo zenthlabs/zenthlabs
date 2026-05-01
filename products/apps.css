@@ -33,6 +33,10 @@
   color: var(--aqua);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
+.app-icon-frame img {
+  object-fit: contain;
+  width: 100%;
+}
 
 .app-title h1 {
   font-size: 2rem;
@@ -136,6 +140,12 @@
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.05);
   scroll-snap-align: start;
+  overflow: hidden;
+}
+.ss-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 /* Section Headers */
