@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Interest Calculator — ZENITH LABS</title>
+    <title>Date Calculator — ZENITH LABS</title>
 
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap"
@@ -21,47 +21,49 @@
     <style>
       /* --- PAGE SPECIFIC OVERRIDES --- */
       :root {
-        --gold: #d4af37;
+        --warning: #facc15;
       }
 
-      .app-icon-frame {
-        border: 1px solid var(--gold);
-        color: var(--gold);
-        box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
+      .integration-notice {
+        margin-top: 15px;
+        background: rgba(250, 204, 21, 0.05);
+        border-left: 3px solid var(--warning);
+        padding: 12px 20px;
+        font-size: 13px;
+        color: var(--warning);
+        max-width: 600px;
       }
 
-      .v2-tag {
-        background: var(--gold);
+      .integration-notice a {
+        color: #fff;
+        font-weight: 700;
+        text-decoration: underline;
+      }
+
+      .btn-smartkit {
+        background: #fff;
         color: #000;
-        padding: 2px 10px;
-        border-radius: 4px;
-        font-size: 10px;
-        font-weight: 900;
-        vertical-align: middle;
-        margin-left: 8px;
-        text-transform: uppercase;
+        padding: 12px 25px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.9rem;
+        transition: 0.3s;
+        display: inline-block;
       }
 
-      /* Gold Theme for Cards */
+      .btn-smartkit:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+      }
+
+      /* Legacy theme tweaks for cards */
       .premium-card:hover {
-        border-color: var(--gold) !important;
+        border-color: var(--warning) !important;
       }
 
       .premium-card i {
-        color: var(--gold) !important;
-      }
-
-      .v2-card {
-        background: linear-gradient(
-          135deg,
-          rgba(212, 175, 55, 0.1),
-          transparent
-        ) !important;
-        border: 1px solid rgba(212, 175, 55, 0.3) !important;
-      }
-
-      .v2-card h3 {
-        color: var(--gold) !important;
+        color: var(--warning) !important;
       }
     </style>
   </head>
@@ -80,9 +82,21 @@
     </nav>
 
     <section class="app-hero">
-      <div class="app-icon-frame"><i class="fa-solid fa-coins"></i></div>
+      <div class="app-icon-frame">
+        <i class="fa-solid fa-calendar-days"></i>
+      </div>
       <div class="app-title">
-        <h1>Interest Calc<span class="v2-tag">Upcoming v2.0</span></h1>
+        <h1>
+          Date Calculator<span
+            class="utility-tag"
+            style="
+              background: rgba(255, 255, 255, 0.1);
+              color: var(--dim);
+              border: 1px solid rgba(255, 255, 255, 0.1);
+            "
+            >Legacy</span
+          >
+        </h1>
         <p
           style="
             color: var(--dim);
@@ -91,47 +105,43 @@
             font-size: 15px;
           "
         >
-          Quickly calculate simple and compound interest with this lightweight
-          app. Enter principal, rate, and time to get instant, accurate results
-          anytime, anywhere with ease.
+          Simple. Fast. Reliable. A focused way to calculate date differences
+          and track age, useful for everyday date calculations without any
+          distractions
         </p>
 
+        <div class="integration-notice">
+          <i class="fa-solid fa-circle-info"></i>
+          Standalone development has stopped. This tool is now
+          <strong>fully integrated</strong> into <strong>SmartKit</strong>.
+          <a href="smartkit.html">Get the upgraded version.</a>
+        </div>
+
         <div class="action-btns">
-          <a href="/apps/interest-calc.apk" class="btn-main" download
-            ><i class="fa-solid fa-download"></i> Download v1.1</a
+          <a href="/apps/date-calculator.apk" class="btn-main" download
+            ><i class="fa-solid fa-download"></i>Download v1.0.0</a
           >
-          <a
-            href="../log/updates.html"
-            style="
-              color: var(--gold);
-              text-decoration: none;
-              font-size: 14px;
-              align-self: center;
-              font-weight: 600;
-              margin-left: 10px;
-            "
-            >View Changelog</a
-          >
+          <a href="smartkit.html" class="btn-smartkit">Check in SmartKit App</a>
         </div>
       </div>
     </section>
 
     <div class="info-bar">
       <div class="info-item">
-        <h4>Current Build</h4>
-        <p>v1.1.2</p>
+        <h4>App Type</h4>
+        <p>Ultra Light</p>
       </div>
       <div class="info-item">
-        <h4>Calculations</h4>
-        <p>Yearly & Monthly</p>
+        <h4>App Size</h4>
+        <p>1.4 MB</p>
       </div>
       <div class="info-item">
-        <h4>Accuracy</h4>
-        <p>100% Precise</p>
+        <h4>Status</h4>
+        <p>Legacy</p>
       </div>
       <div class="info-item">
-        <h4>Next Update</h4>
-        <p>Multi-Calc v2.0</p>
+        <h4>Function</h4>
+        <p>Date Difference</p>
       </div>
     </div>
 
@@ -142,27 +152,42 @@
       <h2 style="color: #fff; font-size: 1.4rem; font-weight: 800">
         App Gallery
       </h2>
-      <div class="scroll-indicator" style="color: var(--gold)">
+      <div class="scroll-indicator">
         <i class="fa-solid fa-arrow-right-long"></i>
       </div>
     </div>
 
     <div class="ss-container">
-      <div class="ss-box"></div>
-      <div class="ss-box"></div>
-      <div class="ss-box"></div>
+      <div class="ss-box">
+        <img
+          src="../images/date-calc1.jpg"
+          alt="Date Calculator Screenshot 1"
+        />
+      </div>
+      <div class="ss-box">
+        <img
+          src="../images/date-calc2.jpg"
+          alt="Date Calculator Screenshot 2"
+        />
+      </div>
+      <div class="ss-box">
+        <img
+          src="../images/date-calc3.jpg"
+          alt="Date Calculator Screenshot 3"
+        />
+      </div>
     </div>
 
     <section class="content-section fade" style="padding: 40px 8%">
       <h2
         style="
           margin-bottom: 35px;
-          border-left: 5px solid var(--gold);
+          border-left: 5px solid var(--warning);
           padding-left: 15px;
           color: #fff;
         "
       >
-        Smart Interest Tools
+        Core Highlights
       </h2>
 
       <div
@@ -174,56 +199,47 @@
         "
       >
         <div class="premium-card">
-          <i class="fa-solid fa-calendar-check"></i>
-          <h3>Monthly Interest</h3>
+          <i class="fa-solid fa-bolt"></i>
+          <h3>Fast Performance</h3>
           <p style="font-size: 14px; color: var(--dim); line-height: 1.6">
-            Calculate simple or compound interest on a monthly basis. Helpful
-            for checking short-term interest quickly and easily.
+            Opens quickly and works smoothly without unnecessary delays.
+            Suitable for everyday use, even on low-storage devices.
           </p>
         </div>
 
         <div class="premium-card">
-          <i class="fa-solid fa-chart-line"></i>
-          <h3>Yearly Interest</h3>
+          <i class="fa-solid fa-calculator"></i>
+          <h3>Focused Tools</h3>
           <p style="font-size: 14px; color: var(--dim); line-height: 1.6">
-            Calculate yearly interest with clear results. Works for both simple
-            and compound calculations in a straightforward way.
+            Includes only the essential features like age calculation, date
+            differences, and simple countdowns without extra complexity.
           </p>
         </div>
 
-        <div class="premium-card v2-card">
-          <i class="fa-solid fa-layer-group"></i>
-          <h3>Upcoming: Multi-Interest</h3>
+        <div class="premium-card">
+          <i class="fa-solid fa-feather"></i>
+          <h3>Lightweight Size</h3>
           <p style="font-size: 14px; color: var(--dim); line-height: 1.6">
-            <strong>v2.0:</strong> Calculate multiple interest values at the
-            same time, compare simple and compound results, save calculation
-            history, and export your results for later use. More flexible
-            options and better control over your calculations.
+            Small app size that doesn’t take up much space on your device.
+            Designed to stay simple and efficient for its purpose.
           </p>
         </div>
       </div>
     </section>
-
     <div class="section-title">Other apps from The Lab</div>
     <div class="lab-scroll fade">
-      <a href="smartkit.html" class="lab-card">
+      <a
+        href="smartkit.html"
+        class="lab-card"
+        style="border-color: var(--aqua)"
+      >
         <h3>
           <span><i class="fa-solid fa-layer-group"></i> SmartKit</span>
           <i class="fa-solid fa-chevron-right arrow-icon"></i>
         </h3>
         <p>
-          Advanced minimalist dashboard with 15+ essential tools for daily
-          productivity.
-        </p>
-      </a>
-      <a href="pdfmaster.html" class="lab-card">
-        <h3>
-          <span><i class="fa-solid fa-file-pdf"></i> PDF Master</span>
-          <i class="fa-solid fa-chevron-right arrow-icon"></i>
-        </h3>
-        <p>
-          The ultimate PDF toolkit to merge, split, and compress documents
-          instantly.
+          Recommended. Advanced dashboard with 15+ daily tools including
+          upgraded Date Calc.
         </p>
       </a>
       <a href="criptix.html" class="lab-card">
@@ -236,6 +252,16 @@
           communications.
         </p>
       </a>
+      <a href="pdfmaster.html" class="lab-card">
+        <h3>
+          <span><i class="fa-solid fa-file-pdf"></i> PDF Master</span>
+          <i class="fa-solid fa-chevron-right arrow-icon"></i>
+        </h3>
+        <p>
+          The ultimate PDF toolkit to merge, split, and compress documents
+          instantly.
+        </p>
+      </a>
       <a href="compressor.html" class="lab-card">
         <h3>
           <span><i class="fa-solid fa-file-image"></i> Compressor</span>
@@ -246,13 +272,14 @@
           clarity.
         </p>
       </a>
-      <a href="date-calc.html" class="lab-card">
+      <a href="interest-calc.html" class="lab-card">
         <h3>
-          <span><i class="fa-solid fa-calendar-days"></i> Date Calc</span>
+          <span><i class="fa-solid fa-calculator"></i> Interest Calc</span>
           <i class="fa-solid fa-chevron-right arrow-icon"></i>
         </h3>
         <p>
-          Precision age tracking and countdowns to your important life events.
+          Calculate simple and compound interest for loans with detailed
+          summaries.
         </p>
       </a>
     </div>
@@ -304,7 +331,6 @@
         <span id="app-version"></span>
       </div>
     </footer>
-
     <script src="../script.js"></script>
     <script>
       const faders = document.querySelectorAll(".fade");
