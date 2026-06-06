@@ -279,9 +279,11 @@
                 </select>
               </div>
 
-              <div class="form-group">
+              <!-- Subject Container wrapper added to ease hiding/showing -->
+              <div class="form-group" id="subjectWrapper">
                 <label>Subject</label>
                 <select id="category" class="input-control" required>
+                  <option value="general_fb" selected>General Feedback</option>
                   <option value="ui">Design & UI</option>
                   <option value="speed">Speed & Performance</option>
                   <option value="other_gen">Other</option>
@@ -308,13 +310,27 @@
           </form>
         </div>
 
-        <div id="success-msg">
+       <div id="success-msg">
           <i class="fa-solid fa-circle-check"></i>
           <h2>Thank You!</h2>
           <p style="color: var(--dim); margin-bottom: 25px">
             Your feedback has been sent successfully.
           </p>
-          <a href="index.html" class="btn">Back to Home</a>
+          
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+            <!-- 1. Home Button -->
+            <a href="../index.html" class="btn" style="width: 100%; max-width: 200px; text-align: center;">Back to Home</a>
+            
+            <!-- 2. Assistance Message -->
+            <p style="color: var(--dim); font-size: 0.9rem; margin: 5px 0 0 0;">
+              If you still need any further assistance, please feel free to reach out to us.
+            </p>
+            
+            <!-- 3. Contact Button -->
+            <a href="contact.html" class="btn-modern" style="width: 100%; max-width: 200px; padding: 12px; font-size: 0.9rem;">
+              <i class="fa-solid fa-envelope"></i> Contact Us
+            </a>
+          </div>
         </div>
       </div>
     </main>
@@ -357,44 +373,76 @@
     </footer>
     <script src="../script.js"></script>
     <script>
-      // Dropdown Change Logic
       const userType = document.getElementById("userType");
       const category = document.getElementById("category");
+      const subjectWrapper = document.getElementById("subjectWrapper");
 
+      // Updated options map with default General Feedback
       const optionsMap = {
         general: [
+          { val: "general_fb", text: "General Feedback" },
           { val: "ui", text: "Design & UI" },
           { val: "speed", text: "Speed & Performance" },
           { val: "other_gen", text: "Other" },
         ],
         user: [
+          { val: "user_fb", text: "General Feedback" },
           { val: "bug", text: "Report a Bug" },
           { val: "feature", text: "Request a Feature" },
           { val: "crash", text: "App is Crashing" },
           { val: "other_user", text: "General Product Help" },
         ],
         partner: [
+          { val: "partner_fb", text: "General Feedback" },
           { val: "collab", text: "Collaboration" },
           { val: "ads", text: "Advertising" },
-          { val: "api", text: "API Access" },
           { val: "other_partner", text: "Other Business" },
         ],
-        other: [
-          { val: "career", text: "Jobs / Hiring" },
-          { val: "misc", text: "Miscellaneous" },
-        ],
+        other: [] // Kept empty as we hide the dropdown
       };
 
-      userType.addEventListener("change", function () {
-        const selected = this.value;
-        const options = optionsMap[selected];
+      function updateCategories(selectedType) {
+        // If "Other" is selected, hide the entire subject input field
+        if (selectedType === "other") {
+          subjectWrapper.style.display = "none";
+          category.removeAttribute("required");
+          category.innerHTML = "";
+          return;
+        }
+
+        // Show subject input field for all other selections
+        subjectWrapper.style.display = "block";
+        category.setAttribute("required", "required");
+
+        const options = optionsMap[selectedType] || optionsMap['general'];
         category.innerHTML = "";
+        
         options.forEach((opt) => {
           const el = document.createElement("option");
           el.value = opt.val;
           el.textContent = opt.text;
           category.appendChild(el);
         });
+      }
+
+      userType.addEventListener("change", function () {
+        updateCategories(this.value);
+      });
+
+      // --- URL PARAMETERS AUTO-SELECT LOGIC ---
+      window.addEventListener("DOMContentLoaded", () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const paramUser = urlParams.get('user');      
+        const paramSubject = urlParams.get('subject'); 
+
+        if (paramUser && optionsMap[paramUser]) {
+          userType.value = paramUser; 
+          updateCategories(paramUser); 
+          
+          if (paramSubject && paramUser !== "other") {
+            category.value = paramSubject; 
+          }
+        }
       });
 
       // Form Submission UI
