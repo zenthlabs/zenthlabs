@@ -47,25 +47,32 @@
         font-size: 1.5rem;
       }
 
-      .btn-disabled {
-        background: rgba(255, 255, 255, 0.05);
-        color: var(--dim);
+      /* ACTIVATE BETA BUTTON STYLE */
+      .btn-active-beta {
+        background: linear-gradient(45deg, var(--teal), var(--aqua));
+        color: #fff;
         padding: 14px 28px;
         border-radius: 12px;
         text-decoration: none;
         font-weight: 700;
         font-size: 0.95rem;
-        cursor: not-allowed;
-        border: 1px solid rgba(255, 255, 255, 0.05);
         display: flex;
         align-items: center;
         gap: 10px;
+        transition: 0.3s;
+        box-shadow: 0 5px 15px rgba(0, 121, 107, 0.2);
+      }
+
+      .btn-active-beta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 121, 107, 0.4);
+        filter: brightness(1.1);
       }
 
       .btn-beta {
-        background: rgba(0, 121, 107, 0.1);
-        border: 1px solid var(--teal);
-        color: var(--teal);
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: var(--dim);
         padding: 14px 28px;
         border-radius: 12px;
         text-decoration: none;
@@ -75,7 +82,7 @@
       }
 
       .btn-beta:hover {
-        background: var(--teal);
+        background: rgba(255, 255, 255, 0.1);
         color: #fff;
       }
 
@@ -105,7 +112,7 @@
           PDF Master<span
             class="labs-text"
             style="font-size: 1rem; margin-left: 10px; opacity: 0.6"
-            >(v3.0 Alpha)</span
+            >(v3.0 Beta)</span
           >
         </h1>
         <p
@@ -121,24 +128,28 @@
           precision.
         </p>
 
+        <!-- STABLE UNAVAILABLE & BETA OPEN ALERT -->
         <div class="maintenance-alert">
-          <i class="fa-solid fa-screwdriver-wrench"></i>
+          <i class="fa-solid fa-flask"></i>
           <div>
             <p style="font-weight: 800; font-size: 14px">
-              Service Temporarily Unavailable
+              Stable Version Temporarily Unavailable
             </p>
             <p style="font-size: 12px; opacity: 0.8">
-              We are currently upgrading the PDF engine. The new version will be
-              back soon with a stable public release.
+              We are currently upgrading the stable PDF engine. However, the new
+              v3.0 core features are now open for public Beta Testing.
             </p>
           </div>
         </div>
 
+        <!-- ACTION BUTTONS LINKED TO BETA.HTML -->
         <div class="action-btns">
-          <div class="btn-disabled">
-            <i class="fa-solid fa-ban"></i> Download Unavailable
-          </div>
-          <a href="../contact/collaborate.html" class="btn-beta">Get Notified</a>
+          <a href="beta.html" class="btn-active-beta">
+            <i class="fa-solid fa-flask"></i> Try Beta Version
+          </a>
+          <a href="../contact/collaborate.html" class="btn-beta"
+            >Get Notified</a
+          >
         </div>
       </div>
     </section>
@@ -146,15 +157,15 @@
     <div class="info-bar">
       <div class="info-item">
         <h4>Status</h4>
-        <p style="color: var(--warning)">Maintenance</p>
+        <p style="color: var(--aqua)">Beta Open</p>
       </div>
       <div class="info-item">
         <h4>Next Release</h4>
         <p>Q3 2026</p>
       </div>
       <div class="info-item">
-        <h4>Package</h4>
-        <p>18.5 MB</p>
+        <h4>Stable</h4>
+        <p>N/A</p>
       </div>
       <div class="info-item">
         <h4>Engine</h4>
@@ -173,15 +184,14 @@
         <i class="fa-solid fa-arrow-right-long"></i>
       </div>
     </div>
-
     <div class="ss-container">
-      <div class="ss-box"></div>
-      <div class="ss-box"></div>
-      <div class="ss-box"></div>
-      <div class="ss-box"></div>
-      <div class="ss-box"></div>
+      <div class="ss-box"><img src="../images/pdf1.jpg" alt="PDF Master" /></div>
+      <div class="ss-box"><img src="../images/pdf2.jpg" alt="PDF Master" /></div>
+      <div class="ss-box"><img src="../images/pdf3.jpg" alt="PDF Master" /></div>
+      <div class="ss-box"><img src="../images/pdf4.jpg" alt="PDF Master" /></div>
     </div>
 
+    <!-- UPDATED FEATURES SECTION -->
     <section class="content-section fade" style="padding: 40px 8%">
       <h2
         style="
@@ -191,7 +201,7 @@
           color: #fff;
         "
       >
-        What's Coming in v3.0?
+        What's Inside v3.0 Beta?
       </h2>
       <div
         class="highlight-grid"
@@ -201,28 +211,32 @@
           gap: 25px;
         "
       >
+        <!-- Feature 1 -->
         <div class="premium-card">
-          <i class="fa-solid fa-file-export"></i>
-          <h3>Image-PDF Conversion</h3>
+          <i class="fa-solid fa-images"></i>
+          <h3>Image to PDF & Vice Versa</h3>
           <p style="font-size: 14px; color: var(--dim); line-height: 1.6">
-            Convert multiple images into a single high-quality PDF or extract
-            high-resolution images from any PDF document effortlessly.
+            Convert multiple images (JPEG, PNG) into a single clean PDF document
+            or extract high-resolution images from any PDF file flawlessly.
           </p>
         </div>
-        <div class="premium-card">
-          <i class="fa-solid fa-lock"></i>
-          <h3>Secure Lock/Unlock</h3>
-          <p style="font-size: 14px; color: var(--dim); line-height: 1.6">
-            Add strong password protection to your sensitive documents or remove
-            existing passwords for easy access with one-tap tools.
-          </p>
-        </div>
+        <!-- Feature 2 -->
         <div class="premium-card">
           <i class="fa-solid fa-file-zipper"></i>
-          <h3>Advanced Compression</h3>
+          <h3>Merge & Compress PDF</h3>
           <p style="font-size: 14px; color: var(--dim); line-height: 1.6">
-            Reduce PDF file size significantly while maintaining text clarity
-            and image resolution for professional use.
+            Combine multiple documents into one structured file, or shrink large
+            PDF file sizes while keeping the text and layout perfectly sharp.
+          </p>
+        </div>
+        <!-- Feature 3 -->
+        <div class="premium-card">
+          <i class="fa-solid fa-key"></i>
+          <h3>Viewer, Lock & Password Tools</h3>
+          <p style="font-size: 14px; color: var(--dim); line-height: 1.6">
+            Read files smoothly with the built-in PDF Viewer. Instantly lock
+            sensitive data with custom passwords, unlock restrictions, or change
+            passwords securely.
           </p>
         </div>
       </div>
