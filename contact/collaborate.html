@@ -17,7 +17,6 @@
             --border: rgba(255, 255, 255, 0.08);
         }
 
-
         .glow-bg {
             position: fixed;
             top: 0;
@@ -27,7 +26,6 @@
             background: radial-gradient(circle at 50% -20%, rgba(0, 121, 107, 0.2), transparent 50%);
             z-index: -1;
         }
-
 
         .collab-hero {
             padding: 160px 8% 60px;
@@ -49,30 +47,21 @@
             margin: 0 auto;
         }
 
+        /* HERO APP: SMART NOTES */
         .active-project {
             margin: 40px 8%;
             background: var(--glass);
             border: 1px solid var(--border);
             border-radius: 40px;
-            padding: 60px;
+            padding: 50px;
             position: relative;
             overflow: hidden;
+        }
+
+        .project-flex {
             display: flex;
             align-items: center;
             gap: 50px;
-        }
-
-        .active-project::after {
-            content: 'OPEN COLLAB';
-            position: absolute;
-            top: 30px;
-            right: -40px;
-            background: var(--teal);
-            color: white;
-            padding: 10px 50px;
-            transform: rotate(45deg);
-            font-size: 12px;
-            font-weight: 800;
         }
 
         .project-info {
@@ -97,69 +86,43 @@
 
         .project-info p {
             color: var(--dim);
-            margin-bottom: 30px;
-            line-height: 1.8;
+            margin-bottom: 25px;
+            line-height: 1.6;
+            font-size: 15px;
         }
 
-        .collab-options {
+        /* BUTTON GROUPS FOR DUAL ACTION */
+        .action-group {
             display: flex;
             gap: 15px;
+            margin-top: 25px;
             flex-wrap: wrap;
         }
 
-        .opt-tag {
-            background: rgba(255, 255, 255, 0.05);
+        .btn-dev {
+            padding: 14px 28px;
+            border-radius: 12px;
             border: 1px solid var(--border);
-            padding: 8px 18px;
-            border-radius: 100px;
-            font-size: 13px;
-            color: var(--aqua);
+            background: rgba(255, 255, 255, 0.03);
+            color: #fff;
             font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .collab-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            padding: 40px 8% 100px;
+        .btn-dev:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--text);
         }
 
-        .collab-card {
-            background: var(--glass);
-            border: 1px solid var(--border);
-            padding: 40px;
-            border-radius: 30px;
-            transition: 0.4s;
-        }
-
-        .collab-card:hover {
-            border-color: var(--teal);
-            background: rgba(255, 255, 255, 0.04);
-            transform: translateY(-10px);
-        }
-
-        .collab-card i {
-            font-size: 2rem;
-            color: var(--aqua);
-            margin-bottom: 25px;
-        }
-
-        .collab-card h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-
-        .collab-card p {
-            color: var(--dim);
-            font-size: 14px;
-            margin-bottom: 30px;
-        }
-
-        .btn-action {
-            width: 100%;
-            padding: 15px;
-            border-radius: 15px;
+        .btn-biz {
+            padding: 14px 28px;
+            border-radius: 12px;
             border: none;
             background: var(--teal);
             color: #fff;
@@ -167,16 +130,111 @@
             cursor: pointer;
             transition: 0.3s;
             text-decoration: none;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-biz:hover {
+            background: var(--aqua);
+            box-shadow: 0 8px 20px rgba(0, 121, 107, 0.2);
+        }
+
+        /* GRID SYSTEM */
+        .collab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            padding: 20px 8% 100px;
+        }
+
+        .collab-card {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            padding: 35px;
+            border-radius: 30px;
+            transition: 0.4s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .collab-card:hover {
+            border-color: var(--border);
+            background: rgba(255, 255, 255, 0.03);
+            transform: translateY(-5px);
+        }
+
+        /* Featured Custom Dev Card styling */
+        .collab-card.featured-card {
+            border-color: rgba(77, 182, 172, 0.25);
+            background: linear-gradient(180deg, rgba(0, 121, 107, 0.04), transparent);
+        }
+        
+        .collab-card.featured-card:hover {
+            border-color: var(--aqua);
+        }
+
+        .collab-card i.main-icon {
+            font-size: 2rem;
+            color: var(--aqua);
+            margin-bottom: 20px;
             display: block;
+        }
+
+        .collab-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        .collab-card p {
+            color: var(--dim);
+            font-size: 14px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .card-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 25px 0;
+        }
+
+        .card-features li {
+            font-size: 13px;
+            color: var(--text);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-features li i {
+            font-size: 11px;
+            color: var(--aqua);
+        }
+
+        .grid-btn-full {
+            width: 100%;
+            padding: 14px;
+            border-radius: 12px;
+            border: none;
+            background: var(--teal);
+            color: #fff;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
             text-align: center;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        .btn-action:hover {
+        .grid-btn-full:hover {
             background: var(--aqua);
-            box-shadow: 0 10px 20px rgba(0, 121, 107, 0.2);
+            color: #000;
         }
 
         footer {
@@ -189,14 +247,17 @@
         }
 
         @media (max-width: 900px) {
-            .active-project {
+            .project-flex {
                 flex-direction: column;
                 text-align: center;
-                padding: 40px 20px;
             }
 
             .collab-hero h1 {
                 font-size: 2.5rem;
+            }
+            
+            .action-group {
+                justify-content: center;
             }
         }
     </style>
@@ -205,6 +266,7 @@
 <body>
 
     <div class="glow-bg"></div>
+    
     <nav>
         <div class="logo"><a href="../index.html">ZENTH LABS</a></div>
         <div class="nav">
@@ -214,74 +276,91 @@
     </nav>
 
     <header class="collab-hero">
-        <h1>Innovate Together</h1>
-        <p>We are building a clean digital future. Join our mission through open collaboration.</p>
+        <h1>Innovate & Work Together</h1>
+        <p>Build the future with us. Whether you are a developer looking to code or a business looking to sponsor, let's collaborate.</p>
     </header>
 
     <section class="active-project">
-        <div class="project-info">
-            <span class="project-tag">Priority Collaboration</span>
-            <h2>Smart Notes v1.0</h2>
-            <p>Help us refine the architecture of our privacy-first note-taking system. We're looking for passionate
-                contributors.</p>
+        <div class="project-flex">
+            <div class="project-info">
+                <span class="project-tag">Open for Collaboration</span>
+                <h2>Smart Notes Project</h2>
+                <p>We are building a clean, offline-first notes app. Developers can join us to write features and APIs. Businesses can join to place native ads, sponsor development, or integrate tools.</p>
 
-            <div class="collab-options">
-                <span class="opt-tag">Kotlin</span> <span class="opt-tag">Material 3</span> <span
-                    class="opt-tag">Encryption</span>
+                <div class="action-group">
+                    <button class="btn-dev" onclick="redirectToForm('collab', 'notes_dev')">
+                        <i class="fa-solid fa-code"></i> Join as Developer
+                    </button>
+                    <button class="btn-biz" onclick="redirectToForm('business', 'notes_sponsor')">
+                        <i class="fa-solid fa-handshake"></i> Sponsor / Place Ads
+                    </button>
+                </div>
             </div>
-
-            <button class="btn-action" style="max-width: 250px; margin-top: 30px;"
-                onclick="redirectToForm('collab', 'notes')">
-                Apply for Collab
-            </button>
         </div>
     </section>
 
     <div class="collab-grid">
+        
         <div class="collab-card">
-            <i class="fa-solid fa-terminal"></i>
-            <h3>Development</h3>
-            <p>Apply for a position in our core engineering team. Focus on Android and Backend.</p>
-            <button class="btn-action" onclick="redirectToForm('join', 'android')">Join as Developer</button>
+            <div>
+                <i class="fa-solid fa-file-image main-icon"></i>
+                <h3>Image Compressor</h3>
+                <p>Our fast web-based batch image trimmer. Developers can optimize algorithms, while brands can rent ad banners inside the workspace.</p>
+                
+                <div class="action-group" style="margin-top: 15px;">
+                    <button class="btn-dev" style="padding: 10px 15px; font-size: 0.8rem;" onclick="redirectToForm('collab', 'compressor_dev')">
+                        <i class="fa-solid fa-code"></i> Join Dev
+                    </button>
+                    <button class="btn-biz" style="padding: 10px 15px; font-size: 0.8rem;" onclick="redirectToForm('business', 'compressor_ads')">
+                        <i class="fa-solid fa-heart"></i> Sponsor / Ads
+                    </button>
+                </div>
+            </div>
         </div>
 
         <div class="collab-card">
-            <i class="fa-solid fa-bezier-curve"></i>
-            <h3>UI/UX Design</h3>
-            <p>Help us design minimalist and intuitive interfaces for ZENTH ecosystems.</p>
-            <button class="btn-action" onclick="redirectToForm('join', 'uiux')">Join as Designer</button>
+            <div>
+                <i class="fa-solid fa-rectangle-ad main-icon"></i>
+                <h3>General Ad Space</h3>
+                <p>Want your brand visible on all ZENTH utilities? Partner with us to run lightweight, high-conversion native ads aimed at tech-savvy users.</p>
+            </div>
+            <button class="grid-btn-full" onclick="redirectToForm('business', 'ads')" style="margin-top: 20px;">
+                Book Ad Space
+            </button>
         </div>
 
-        <div class="collab-card">
-            <i class="fa-solid fa-code"></i>
-            <h3>Business Inquiries</h3>
-            <p>Looking for custom App/Web development or partnership opportunities?</p>
-            <button class="btn-action" onclick="redirectToForm('business', 'app_dev')">Start Project</button>
+        <div class="collab-card featured-card">
+            <div>
+                <i class="fa-solid fa-code-branch main-icon"></i>
+                <h3>Custom App & Web Dev</h3>
+                <p>Need something custom built from scratch? Hire the expert core engineering team at ZENTH LABS to turn your product vision into production-ready software.</p>
+                
+                <ul class="card-features">
+                    <li><i class="fa-solid fa-arrow-right"></i> Premium Web Apps & Dashboards</li>
+                    <li><i class="fa-solid fa-arrow-right"></i> High-Performance iOS & Android Apps</li>
+                    <li><i class="fa-solid fa-arrow-right"></i> Scalable Cloud Backends & Custom APIs</li>
+                </ul>
+            </div>
+            <button class="grid-btn-full" onclick="redirectToForm('business', 'other_biz')" style="background: var(--aqua); color: #000;">
+                Start Custom Project
+            </button>
         </div>
+        
     </div>
 
     <footer>
        <div class="copyright">
-            <p>
-                © 2026 <span class="cr-brand">ZENTH LABS</span>
-            </p>
+            <p>© 2026 <span class="cr-brand">ZENTH LABS</span></p>
             <span id="app-version"></span>
         </div>
     </footer>
 
     <script>
-        /**
-         * Redirect Logic for Contact Hub
-         * @param {string} intent - Maps to "i_want_to" (join, collab, business, report)
-         * @param {string} target - Maps to the specific dropdown value (notes, android, app_dev, etc.)
-         */
         function redirectToForm(intent, target) {
-            // Generating URL with parameters
             const destination = `contact.html?i_want_to=${intent}&target=${target}`;
             window.location.href = destination;
         }
     </script>
 
 </body>
-
 </html>
