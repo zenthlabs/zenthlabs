@@ -1,9 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Beta Hub — ZENTH LABS</title>
+    <!-- Fonts & FontAwesome -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Space+Grotesk:wght@300;500;700&display=swap"
       rel="stylesheet"
@@ -12,24 +13,22 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <!-- Linking Common Stylesheet -->
     <link rel="stylesheet" href="../style.css" />
 
     <style>
+      /* Beta Hub Specific Custom Configurations */
       :root {
-        --surface: #0d1117;
         --neon: #00f2ff;
-        --text: #e6fffa;
-        --dim: #94a3b8;
         --warning: #f59e0b;
+        --danger: #ff4757;
       }
 
-      h1,
-      h2,
-      h3 {
+      h1, h2, h3 {
         font-family: "Space Grotesk", sans-serif;
       }
 
-      /* HERO */
+      /* HERO SECTION */
       .beta-hero {
         padding: 150px 8% 60px;
         text-align: center;
@@ -70,30 +69,35 @@
         letter-spacing: -1px;
       }
 
-      /* APP GRID */
+      /* DYNAMIC APP GRID */
       .beta-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
         gap: 30px;
-        padding: 20px 8% 80px;
+        padding: 20px 8% 60px;
       }
 
+      /* Using premium-card architecture from common style sheet */
       .beta-card {
-        background: var(--surface);
+        background: var(--card); /* Reused */
         border: 1px solid rgba(255, 255, 255, 0.05);
         border-radius: 28px;
         padding: 35px;
         position: relative;
         transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         overflow: hidden;
       }
 
       .beta-card:hover {
-        border-color: var(--teal);
+        border-color: var(--neon);
         transform: translateY(-10px);
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
       }
 
+      /* STATUS BADGES */
       .status-dot {
         width: 8px;
         height: 8px;
@@ -102,6 +106,11 @@
         display: inline-block;
         margin-right: 8px;
         box-shadow: 0 0 10px #22c55e;
+      }
+
+      .status-dot.danger {
+        background: var(--danger);
+        box-shadow: 0 0 10px var(--danger);
       }
 
       .dev-status {
@@ -113,6 +122,7 @@
         display: block;
       }
 
+      /* APP META DETAILS */
       .app-meta {
         display: flex;
         justify-content: space-between;
@@ -125,27 +135,29 @@
       .meta-item span {
         display: block;
         font-size: 10px;
-        color: var(--dim);
+        color: var(--dim); /* Reused */
         text-transform: uppercase;
       }
 
       .meta-item p {
         font-weight: 700;
         font-size: 14px;
-        color: var(--aqua);
+        color: var(--aqua); /* Reused */
       }
 
+      /* INTERNAL CHANGELOG MODULES */
       .changelog-box {
         background: rgba(0, 0, 0, 0.2);
         padding: 15px;
         border-radius: 12px;
         margin-bottom: 25px;
+        flex-grow: 1;
       }
 
       .changelog-box h4 {
         font-size: 12px;
         margin-bottom: 8px;
-        color: var(--text);
+        color: var(--text); /* Reused */
         display: flex;
         align-items: center;
         gap: 8px;
@@ -154,26 +166,35 @@
       .changelog-box ul {
         list-style: none;
         font-size: 13px;
-        color: var(--dim);
+        color: var(--dim); /* Reused */
+        padding: 0;
       }
 
       .changelog-box li {
         margin-bottom: 5px;
         position: relative;
         padding-left: 15px;
+        line-height: 1.4;
       }
 
       .changelog-box li::before {
         content: "→";
         position: absolute;
         left: 0;
-        color: var(--teal);
+        color: var(--aqua); /* Reused */
       }
 
-      .download-actions {
+      /* FLEXIBLE BUTTON SYSTEM */
+      .action-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .action-row {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 12px;
+        gap: 10px;
       }
 
       .dl-btn {
@@ -191,63 +212,127 @@
       }
 
       .v-stable {
-        background: var(--teal);
+        background: var(--teal); /* Reused */
         color: #fff;
       }
 
       .v-legacy {
-        background: rgba(255, 255, 255, 0.05);
-        color: var(--text);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--text); /* Reused */
+        border: 1px solid rgba(255, 255, 255, 0.08);
       }
 
-      .dl-btn:hover {
+      .v-disabled {
+        background: rgba(255, 255, 255, 0.02) !important;
+        color: rgba(255, 255, 255, 0.2) !important;
+        border: 1px solid rgba(255, 255, 255, 0.03) !important;
+        cursor: not-allowed;
+        pointer-events: none;
+      }
+
+      .dl-btn:not(.v-disabled):hover {
         filter: brightness(1.2);
+        box-shadow: 0 0 15px rgba(77, 182, 172, 0.2);
+      }
+
+      /* EXTENDED INTERACTIVE BUG REPORT SECTION */
+      .report-section {
+        max-width: 600px;
+        margin: 40px auto 100px;
+        padding: 35px;
+        background: linear-gradient(135deg, rgba(0, 121, 107, 0.05), transparent);
+        border: 1px dashed rgba(77, 182, 172, 0.2);
+        border-radius: 25px;
+        text-align: center;
+        position: relative;
+        backdrop-filter: blur(10px);
+        transition: 0.4s ease;
+      }
+
+      .report-section:hover {
+        border-color: var(--aqua);
+        box-shadow: 0 0 30px rgba(77, 182, 172, 0.05);
+        transform: translateY(-2px);
+      }
+
+      .report-icon {
+        width: 55px;
+        height: 55px;
+        background: rgba(255, 71, 87, 0.1);
+        color: var(--danger);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 18px;
+        font-size: 22px;
+        box-shadow: 0 0 15px rgba(255, 71, 87, 0.1);
+      }
+
+      .report-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: var(--teal);
+        color: #fff;
+        padding: 14px 32px;
+        border-radius: 12px;
+        font-weight: 700;
+        text-decoration: none;
+        margin-top: 15px;
+        transition: 0.3s;
+      }
+
+      .report-btn:hover {
+        background: var(--aqua);
+        box-shadow: 0 5px 20px rgba(77, 182, 172, 0.3);
       }
     </style>
   </head>
 
   <body>
+    <!-- Aura Decorative System Background -->
+    <div class="aura"></div>
+
+    <!-- Navigation Bar - Reused global designs -->
     <nav>
       <div class="logo"><a href="../index.html">ZENTH LABS</a></div>
       <div class="nav">
-        <a href="../index.html#apps"
-          ><i class="fa-solid fa-layer-group"></i> Apps</a
-        >
-        <a href="../index.html#services"
-          ><i class="fa-solid fa-screwdriver-wrench"></i> Services</a
-        >
+        <a href="../index.html#apps"><i class="fa-solid fa-layer-group"></i> Apps</a>
+        <a href="../index.html#services"><i class="fa-solid fa-screwdriver-wrench"></i> Services</a>
       </div>
     </nav>
+    
+    <!-- Hero Header -->
     <header class="beta-hero">
       <div class="beta-badge">Early Access Applications</div>
       <h1>Under Development</h1>
-      <p>
-        Test the latest builds of ZENTH Applications. Your feedback drives our
-        evolution.
-      </p>
+      <p>Test the latest builds of ZENTH Applications. Your feedback drives our evolution.</p>
     </header>
 
+    <!-- Cards Grid -->
     <section class="beta-grid">
+      
+      <!-- 1. SMARTKIT 3.0 CARD -->
       <div class="beta-card">
-        <span class="dev-status"
-          ><span class="status-dot"></span> Beta Available</span
-        >
-
-        <h3>SmartKit 3.0</h3>
-        <p style="font-size: 14px; color: var(--dim); margin: 10px 0">
-          Next-gen modular toolkit with 15+ utilities and refreshed
-          Glassmorphism UI.
-        </p>
+        <div>
+          <span class="dev-status">
+            <span class="status-dot"></span> Beta Available
+          </span>
+          <h3>SmartKit 3.0</h3>
+          <p style="font-size: 14px; color: var(--dim); margin: 10px 0">
+            Next-gen modular toolkit with 10+ utilities and refreshed  UI framework.
+          </p>
+        </div>
 
         <div class="app-meta">
           <div class="meta-item">
-            <span>Latest Build </span>
-            <p>Apr , 2026</p>
+            <span>Latest Build</span>
+            <p>June, 2026</p>
           </div>
           <div class="meta-item">
             <span>Version</span>
-            <p>v3.0-beta4</p>
+            <p>v3.0-beta4+</p>
           </div>
           <div class="meta-item">
             <span>Size</span>
@@ -258,44 +343,142 @@
         <div class="changelog-box">
           <h4><i class="fa-solid fa-list-check"></i> Recent Changes</h4>
           <ul>
-            <li>Added New Currency Converter</li>
-            <li>Fixed Dark Mode contrast issues</li>
-            <li>
-              Optimized Tools [Most Used tools Add to Home & More Features Added
-              In Tools]
-            </li>
-            <li>Some Ishue fixes</li>
+            <li>Added New high-speed QR scanner module</li>
+            <li>Fixed Dark Mode deep contrast interface bugs</li>
+            <li>Optimized Tools (Most used items pin to Home)</li>
           </ul>
         </div>
 
-        <div class="download-actions">
-          <a
-            href="../beta/smartkit-v3.0-b4.apk"
-            class="dl-btn v-stable"
-            download
-            ><i class="fa-solid fa-download"></i> Latest Beta</a
-          >
-          <a href="smartkit.html" class="dl-btn v-legacy">Get Stable</a>
+        <div class="action-container">
+          <a href="../beta/smartkit.apk" class="dl-btn v-stable" download>
+            <i class="fa-solid fa-download"></i> Download Beta APK
+          </a>
+          <div class="action-row">
+            <a href="../log/updates.html" class="dl-btn v-legacy">
+              <i class="fa-solid fa-clock-rotate-left"></i> Change Log
+            </a>
+            <a href="smartkit.html" class="dl-btn v-legacy">
+              <i class="fa-solid fa-circle-check"></i> Get Stable
+            </a>
+          </div>
         </div>
       </div>
 
+      <!-- 2. PDF MASTER CARD -->
       <div class="beta-card">
-        <span class="dev-status"
-          ><span class="status-dot"></span> Under Development
-          <span style="color: var(--warning)">
-            <span class="status-dot"></span>Not Available</span
-          ></span
-        >
-        <h3>Image Compressor</h3>
-        <p style="font-size: 14px; color: var(--dim); margin: 10px 0">
-          New Z-Engine for lossless compression and batch processing
-          capabilities.
-        </p>
+        <div>
+          <span class="dev-status" style="color: var(--neon);">
+            <span class="status-dot" style="background: var(--neon); box-shadow: 0 0 10px var(--neon);"></span> Beta Available
+          </span>
+          <h3>PDF Master</h3>
+          <p style="font-size: 14px; color: var(--dim); margin: 10px 0">
+            Complete documents assistant tool for fast conversion, smooth viewing, and merging operations.
+          </p>
+        </div>
+
+        <div class="app-meta">
+          <div class="meta-item">
+            <span>Latest Build</span>
+            <p>June, 2026</p>
+          </div>
+          <div class="meta-item">
+            <span>Version</span>
+            <p>v-beta</p>
+          </div>
+          <div class="meta-item">
+            <span>Size</span>
+            <p>~38.7 MB</p>
+          </div>
+        </div>
+
+        <div class="changelog-box">
+          <h4><i class="fa-solid fa-list-check"></i> Included Core Utilities</h4>
+          <ul>
+            <li>High-resolution Image to PDF Converter</li>
+            <li>Ultra-smooth core rendering engine inside Viewer</li>
+            <li>Advanced Compress PDF engine to safely shrink files</li>
+          </ul>
+        </div>
+
+        <div class="action-container">
+          <a href="../beta/pdfmaster.apk" class="dl-btn v-stable" download>
+            <i class="fa-solid fa-download"></i> Get Beta
+          </a>
+          <div class="action-row">
+            <a href="../log/updates.html" class="dl-btn v-legacy">
+              <i class="fa-solid fa-clock-rotate-left"></i> Change Log
+            </a>
+            <a href="#" class="dl-btn v-legacy v-disabled">Stable N/A</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. SMART NOTES CARD (UNAVAILABLE STATE) -->
+      <div class="beta-card">
+        <div>
+          <span class="dev-status" style="color: var(--danger)">
+            <span class="status-dot danger"></span> Under Development (Not Available)
+          </span>
+          <h3>Smart Notes</h3>
+          <p style="font-size: 14px; color: var(--dim); margin: 10px 0">
+            Secure and modern privacy-focused text platform built for cloudless local workspaces.
+          </p>
+        </div>
 
         <div class="app-meta">
           <div class="meta-item">
             <span>Build Date</span>
-            <p>Apr, 2026</p>
+            <p>TBA</p>
+          </div>
+          <div class="meta-item">
+            <span>Version</span>
+            <p>v0.9-alpha</p>
+          </div>
+          <div class="meta-item">
+            <span>Size</span>
+            <p>-- MB</p>
+          </div>
+        </div>
+
+        <div class="changelog-box">
+          <h4><i class="fa-solid fa-layer-group"></i> Roadmap Highlights</h4>
+          <ul>
+            <li>Offline Notes (Zero cloud dependencies logs)</li>
+            <li>Lock Notes (Biometric and secure PIN protection)</li>
+            <li>Archive Notes (Clean up dynamic primary dashboard)</li>
+            <li>Advanced file systems coming soon...</li>
+          </ul>
+        </div>
+
+        <div class="action-container">
+          <a href="#" class="dl-btn v-stable v-disabled">
+            <i class="fa-solid fa-ban"></i> Not Available
+          </a>
+          <div class="action-row">
+            <a href="../log/updates.html" class="dl-btn v-legacy">
+              <i class="fa-solid fa-clock-rotate-left"></i> Change Log
+            </a>
+            <a href="#" class="dl-btn v-legacy v-disabled">Stable N/A</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. IMAGE COMPRESSOR CARD -->
+      <div class="beta-card">
+        <div>
+          <span class="dev-status" style="color: var(--danger)">
+            <span class="status-dot danger"></span> Under Development (Not Available)
+          </span>
+          <h3>Image Compressor</h3>
+          <p style="font-size: 14px; color: var(--dim); margin: 10px 0">
+            Brand new Z-Engine integration tailored for ultra batch image compression rules.
+          </p>
+        </div>
+
+        <div class="app-meta">
+          <div class="meta-item">
+            <span>Build Date</span>
+            <p>TBA</p>
           </div>
           <div class="meta-item">
             <span>Version</span>
@@ -303,96 +486,56 @@
           </div>
           <div class="meta-item">
             <span>Size</span>
-            <p>8.5 MB</p>
+            <p>-- MB</p>
           </div>
         </div>
 
         <div class="changelog-box">
-          <h4><i class="fa-solid fa-list-check"></i> Recent Changes</h4>
+          <h4><i class="fa-solid fa-gears"></i> Engineering Progress</h4>
           <ul>
-            <li>Integrated Z-Engine v2.0</li>
-            <li>Batch compression up to 10 images</li>
-            <li>Added input for target size</li>
-            <li>## Currently Any app was not Available</li>
+            <li>Integrated lossless Z-Engine v2.0</li>
+            <li>Engineered sequential compression framework</li>
+            <li>Custom resolution size calibration input logic</li>
           </ul>
         </div>
 
-        <div class="download-actions">
-          <a href="" class="dl-btn v-stable"
-            ><i class="fa-solid fa-download"></i> Latest Build</a
-          >
-          <a href="" class="dl-btn v-legacy"> Not Available</a>
+        <div class="action-container">
+          <a href="#" class="dl-btn v-stable v-disabled">
+            <i class="fa-solid fa-ban"></i> Not Available
+          </a>
+          <div class="action-row">
+            <a href="../log/updates.html" class="dl-btn v-legacy">
+              <i class="fa-solid fa-clock-rotate-left"></i> Change Log
+            </a>
+            <a href="#" class="dl-btn v-legacy v-disabled">Stable N/A</a>
+          </div>
         </div>
       </div>
 
-      <div class="beta-card">
-        <span class="dev-status" style="color: var(--warning)"
-          ><span
-            class="status-dot"
-            style="
-              background: var(--warning);
-              box-shadow: 0 0 10px var(--warning);
-            "
-          ></span>
-          Beta Testing Phase</span
-        >
-        <h3>Smart Notes</h3>
-        <p style="font-size: 14px; color: var(--dim); margin: 10px 0">
-          Secure, cloudless note-taking with local AES-256 encryption and folder
-          support.
-        </p>
-
-        <div class="app-meta">
-          <div class="meta-item">
-            <span>Build Date</span>
-            <p>Apr 28, 2026</p>
-          </div>
-          <div class="meta-item">
-            <span>Version</span>
-            <p>v0.9-beta</p>
-          </div>
-          <div class="meta-item">
-            <span>Size</span>
-            <p>11.1 MB</p>
-          </div>
-        </div>
-
-        <div class="changelog-box">
-          <h4><i class="fa-solid fa-list-check"></i> Recent Changes</h4>
-          <ul>
-            <li>Implemented Lock</li>
-            <li>Added background color support</li>
-            <li>New "Drafts" auto-save feature</li>
-          </ul>
-        </div>
-
-        <div class="download-actions">
-          <a href="../beta/notes-v0.9.apk" class="dl-btn v-stable" download
-            ><i class="fa-solid fa-download"></i> Get Beta</a
-          >
-          <a href="../log/updates.html" class="dl-btn v-legacy">Change Log </a>
-          >
-        </div>
-      </div>
     </section>
 
-    <div style="text-align: center; margin-bottom: 80px">
-      <p style="color: var(--dim); font-size: 14px; margin-bottom: 20px">
-        Found a glitch in the beta?
+    <!-- INTERACTIVE FEEDBACK MODULE -->
+    <div class="report-section">
+      <div class="report-icon">
+        <i class="fa-solid fa-bug-slash"></i>
+      </div>
+      <h3 style="margin-bottom: 10px; font-size: 22px; color: #fff;">Found a glitch in our Beta builds?</h3>
+      <p style="color: var(--dim); font-size: 14px; max-width: 450px; margin: 0 auto 15px; line-height: 1.5;">
+        Help us optimize the engine. Submit crash logs, interface overlaps, or system optimization reports directly to our dev team.
       </p>
-      <a
-        href="../contact/contact.html?reason=complaint"
-        style="color: var(--neon); font-weight: 700; text-decoration: none"
-        >Submit Bug Report</a
-      >
+      <a href="../contact/contact.html?reason=complaint" class="report-btn">
+        <i class="fa-solid fa-triangle-exclamation"></i> File Bug Report
+      </a>
     </div>
 
+    <!-- Global Footer -->
     <footer>
       <div class="copyright">
         <p>© 2026 <span class="cr-brand">ZENTH LABS</span></p>
         <span id="app-version"></span>
       </div>
     </footer>
+    
     <script src="../script.js"></script>
   </body>
 </html>
