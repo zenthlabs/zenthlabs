@@ -118,17 +118,9 @@
       }
 
       @keyframes pulse {
-        0% {
-          opacity: 1;
-        }
-
-        50% {
-          opacity: 0.3;
-        }
-
-        100% {
-          opacity: 1;
-        }
+        0% { opacity: 1; }
+        50% { opacity: 0.3; }
+        100% { opacity: 1; }
       }
 
       /* --- RIGHT SIDE: FORM --- */
@@ -164,7 +156,7 @@
       }
 
       .field {
-        background: rgba(0, 0, 0, 0.2);
+        background: rgba(0, 0, 0, 0.4);
         border: 1px solid var(--border);
         padding: 18px 24px;
         border-radius: 20px;
@@ -180,12 +172,22 @@
         box-shadow: 0 0 20px rgba(77, 182, 172, 0.1);
       }
 
+      /* Dropdown text visibility fix for all major browsers */
+      select.field option {
+        background-color: #161b22 !important;
+        color: #ffffff !important;
+        padding: 15px;
+      }
+
       select.field {
         appearance: none;
         cursor: pointer;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='%234db6ac' d='M1.41 0L6 4.58L10.59 0L12 1.41L6 7.41L0 1.41L1.41 0Z'/></svg>");
+        background-repeat: no-repeat;
+        background-position: calc(100% - 25px) center;
       }
 
-      #join-group,
+      /* Hidden by default, controlled via handleUI() */
       #collab-group,
       #app-group,
       #business-group,
@@ -255,26 +257,18 @@
     <nav>
       <div class="logo"><a href="../index.html">ZENTH LABS</a></div>
       <div class="nav">
-        <a href="../index.html#apps"
-          ><i class="fa-solid fa-layer-group"></i> Apps</a
-        >
-        <a href="../index.html#services"
-          ><i class="fa-solid fa-screwdriver-wrench"></i> Services</a
-        >
+        <a href="../index.html#apps"><i class="fa-solid fa-layer-group"></i> Apps</a>
+        <a href="../index.html#services"><i class="fa-solid fa-screwdriver-wrench"></i> Services</a>
       </div>
     </nav>
     <main class="wrapper">
       <div class="info-side">
         <div class="status-tag"><span class="dot"></span> Team Online</div>
         <h1>
-          Let's Build & Work <br /><span style="color: var(--aqua)"
-            >Together.</span
-          >
+          Let's Build & Work <br /><span style="color: var(--aqua)">Together.</span>
         </h1>
         <p>
-          Zenth Labs is always open for innovative ideas and technical
-          collaboration. Whether you need a fix or have a proposal, we're one
-          message away.
+          Zenth Labs is always open for innovative ideas, engineering code, and business partnerships. Drop us a message below.
         </p>
 
         <div class="contact-card">
@@ -329,54 +323,54 @@
             <div class="group">
               <label>Subject of Interest</label>
               <select class="field" id="mainInquiry" onchange="handleUI()">
-                <option value="general">Send General Message</option>
+                <option value="general" selected>General Visitor / Message</option>
                 <option value="report">Feedback & Bug Report</option>
-                <option value="join">Join the Team</option>
-                <option value="collab">Collaborate on Project</option>
-                <option value="business">Business Inquiry</option>
+                <option value="collab">Collaborate (As Developer)</option>
+                <option value="business">Business & Projects Inquiry</option>
                 <option value="complaint">File a Complaint</option>
               </select>
             </div>
 
+            <!-- BUG REPORT SUB-DROPDOWN -->
             <div class="group" id="app-group">
               <label>Target Product</label>
               <select class="field" id="appSelect">
-                <option value="smartkit">SmartKit Pro</option>
+                <option value="smartkit">SmartKit</option>
+                <option value="pdf">PDF Master</option>
+                <option value="speednet">Speed Net</option>
+                <option value="interest_calc">Interest Calc [2.0]</option>
                 <option value="notes">Smart Notes</option>
+                <option value="compressor">Image Compressor</option>
                 <option value="web">ZENTH Website</option>
                 <option value="other_app">Other App/Service</option>
               </select>
             </div>
 
-            <div class="group" id="join-group">
-              <label>Applying For</label>
-              <select class="field" id="roleSelect">
-                <option value="android">Android Developer</option>
-                <option value="uiux">UI/UX Designer</option>
-                <option value="backend">Backend Developer</option>
-                <option value="other_role">Other Role</option>
-              </select>
-            </div>
-
+            <!-- DEVELOPER COLLABORATION SUB-DROPDOWN -->
             <div class="group" id="collab-group">
-              <label>Open Projects</label>
+              <label>Open Collaborations</label>
               <select class="field" id="projectSelect">
-                <option value="notes">Smart Notes</option>
-                <option value="smartkit">SmartKit</option>
-                <option value="other_collab">Other Project</option>
+                <option value="notes_dev">Smart Notes</option>
+                <option value="compressor_dev">Image Compressor</option>
+                <option value="smartkit">SmartKit V3.0</option>
               </select>
             </div>
 
+            <!-- BUSINESS & PARTNERSHIP SUB-DROPDOWN -->
             <div class="group" id="business-group">
-              <label>Department</label>
+              <label>Business Enquiry</label>
               <select class="field" id="bizSelect">
-                <option value="app_dev">App Development</option>
-                <option value="web_dev">Web Development</option>
-                <option value="ads">Advertising/Ads</option>
-                <option value="other_biz">Other Business</option>
+                <option value="notes_sponsor">Partner in Projects / Sponsorship</option>
+                <option value="ads">Partner in Ads</option>
+                <option value="custom_app_dev">Custom App Development</option>
+                <option value="custom_web_dev">Custom Website Development</option>
+                <option value="uiux_design">Premium UI/UX Product Design</option>
+                <option value="redesign_system">Redesign Existing Web or App</option>
+                <option value="other_biz">Other Collaboration</option>
               </select>
             </div>
 
+            <!-- COMPLAINT SUB-DROPDOWN -->
             <div class="group" id="complaint-group">
               <label>Category</label>
               <select class="field">
@@ -420,31 +414,26 @@
         const msg = document.getElementById("mainMessage");
         const groups = [
           "app-group",
-          "join-group",
           "collab-group",
           "business-group",
           "complaint-group",
         ];
 
+        // Hide all conditional groups initially
         groups.forEach(
           (id) => (document.getElementById(id).style.display = "none"),
         );
 
+        // Toggle UI states based on active selection
         if (val === "report") {
           document.getElementById("app-group").style.display = "flex";
           msg.placeholder = "Please describe the bug or share your feedback...";
-        } else if (val === "join") {
-          document.getElementById("join-group").style.display = "flex";
-          msg.placeholder =
-            "Link your portfolio/GitHub and tell us why you want to join...";
         } else if (val === "collab") {
           document.getElementById("collab-group").style.display = "flex";
-          msg.placeholder =
-            "Tell us about your contribution ideas for the project...";
+          msg.placeholder = "Tell us about your coding skills and how you want to contribute to this repo...";
         } else if (val === "business") {
           document.getElementById("business-group").style.display = "flex";
-          msg.placeholder =
-            "Detail your business requirements or partnership proposal...";
+          msg.placeholder = "Detail your project scope, advertising requirement, budget, or system modifications...";
         } else if (val === "complaint") {
           document.getElementById("complaint-group").style.display = "flex";
           msg.placeholder = "Explain your concern in detail...";
@@ -453,7 +442,7 @@
         }
       }
 
-      // URL PARAMETER DETECTION
+      // SMART PARAMETER DETECTION FROM PREVIOUS PAGE
       window.onload = function () {
         const urlParams = new URLSearchParams(window.location.search);
         const intent = urlParams.get("i_want_to");
@@ -464,8 +453,11 @@
           handleUI();
 
           if (target) {
+            // Check mapping compatibility for legacy redirects
+            let dynamicTarget = target;
+            if(target === "custom_dev") dynamicTarget = "custom_app_dev";
+            
             const dropdowns = [
-              "roleSelect",
               "projectSelect",
               "appSelect",
               "bizSelect",
@@ -474,8 +466,8 @@
               const el = document.getElementById(id);
               if (el) {
                 for (let option of el.options) {
-                  if (option.value === target) {
-                    el.value = target;
+                  if (option.value === dynamicTarget || option.value === target) {
+                    el.value = option.value;
                     break;
                   }
                 }
